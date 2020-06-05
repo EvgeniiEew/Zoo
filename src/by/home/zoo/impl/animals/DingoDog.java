@@ -3,13 +3,9 @@ package by.home.zoo.impl.animals;
 import by.home.zoo.models.animals.Mammals;
 
 public class DingoDog extends Mammals {
-    // 2 метода
 
     public DingoDog(String size, String color, String nickname, int weight) {
         super(size, color, nickname, weight);
-    }
-
-    public void bark() {//лаять
     }
 
     @Override
@@ -50,5 +46,12 @@ public class DingoDog extends Mammals {
     @Override
     public boolean isCanMove() {
         return false;
+    }
+
+    public void play() {
+
+    }
+
+    public void bark() {//лаять
     }
 }

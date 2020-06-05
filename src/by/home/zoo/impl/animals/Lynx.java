@@ -4,13 +4,11 @@ import by.home.zoo.models.animals.Mammals;
 
 //рыси
 public class Lynx extends Mammals {
-    //2 vtnjlf
+
     public Lynx(String size, String color, String nickname, int weight) {
         super(size, color, nickname, weight);
     }
-    public void purr(){ //мурлыкать
 
-    }
     @Override
     public void milkFeeding() {
 
@@ -49,5 +47,12 @@ public class Lynx extends Mammals {
     @Override
     public boolean isCanMove() {
         return false;
+    }
+
+    public void purr() { //мурлыкать
+
+    }
+
+    public void play() {
     }
 }
