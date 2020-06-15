@@ -10,6 +10,9 @@ public class Parrot extends Bird implements Speak { //попугаи
         this.canFly = isCanFly;
     }
 
+    public void repeat(String string) {
+
+    }
 
     @Override
     public boolean speak() {

@@ -4,7 +4,6 @@ import by.home.zoo.models.animals.Fish;
 
 public class Shark extends Fish {
 
-
     public Shark(String size, String color, String nickname, int weight) {
         super(size, color, nickname, weight);
     }
@@ -16,7 +15,6 @@ public class Shark extends Fish {
     protected void feelBlood() { //почуять кроу
 
     }
-
 
     @Override
     public void stare() {
