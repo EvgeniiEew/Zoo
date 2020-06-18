@@ -7,15 +7,22 @@ public class Runner {
 
     public static void main(String[] args) {
         Zoo zoo = new Zoo(2, 100, (byte) 100);
+
 //     zoo.setPurity();
 //     zoo.setFood();
 //     zoo.setCell();
 
         Ostrich straus = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый");
         Shark akula = new Shark("Средний", "Серая", "Вася", 120);
-
+       // System.out.println(zoo.getCellsCount()); // количество клеток
+        zoo.addAnimal(straus);
+        zoo.addAnimal(akula);
+        zoo.printZooStatus();
+        //zoo.getEmptyCellsCount();
+        //zoo.NumFreeCell();
+      // System.out.println(zoo.getAnimalTypes());
         //   zoo.addAnimal(Straus, akula);
-        System.out.println(straus.toString());
+        // System.out.println(straus.toString());
         // Cell cell = new Cell();
         // Ostrich Straus = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый");
         // Shark akula = new Shark("Средний","Серая","Вася",120);
@@ -45,8 +52,7 @@ public class Runner {
     }
 
 
-
-   //  Timer timer1 = new Timer(1000, new ActionListener() {
+    //  Timer timer1 = new Timer(1000, new ActionListener() {
 //            @Override
 //            public void actionPerformed(ActionEvent actionEvent) {
 //                //код который выполняется каждую секунду
@@ -57,5 +63,5 @@ public class Runner {
 //            }
 //        }) timer1.startt();
 
-    }
+}
 
