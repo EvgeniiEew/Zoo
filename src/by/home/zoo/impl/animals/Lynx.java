@@ -5,8 +5,8 @@ import by.home.zoo.models.animals.Mammals;
 //рыси
 public class Lynx extends Mammals {
 
-    public Lynx(String size, String color, String nickname, int weight) {
-        super(size, color, nickname, weight);
+    public Lynx(String size, String color, String nickname, int weight, int needFoodPerDay, int doDirtPerDay) {
+        super(size, color, nickname, weight, needFoodPerDay, doDirtPerDay);
     }
 
     @Override

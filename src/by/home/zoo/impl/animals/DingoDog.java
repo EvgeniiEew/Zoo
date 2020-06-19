@@ -4,8 +4,8 @@ import by.home.zoo.models.animals.Mammals;
 
 public class DingoDog extends Mammals {
 
-    public DingoDog(String size, String color, String nickname, int weight) {
-        super(size, color, nickname, weight);
+    public DingoDog(String size, String color, String nickname, int weight, int needFoodPerDay, int doDirtPerDay) {
+        super(size, color, nickname, weight, needFoodPerDay, doDirtPerDay);
     }
 
     @Override

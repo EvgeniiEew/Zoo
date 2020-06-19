@@ -6,8 +6,8 @@ public class Crocodile extends Reptiles { //крокодилы
     int biteForce; //сила укуса
     byte length;
 
-    public Crocodile(int biteForce, String size, String color, String nickname, int weight) {
-        super(size, color, nickname, weight);
+    public Crocodile(int biteForce, String size, String color, String nickname, int weight, int needFoodPerDay, int doDirtPerDay) {
+        super(size, color, nickname, weight, needFoodPerDay, doDirtPerDay);
         this.biteForce = biteForce;
     }
 

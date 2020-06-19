@@ -8,24 +8,20 @@ public class Runner {
     public static void main(String[] args) {
         Zoo zoo = new Zoo(2, 100, (byte) 100);
 
-//     zoo.setPurity();
-//     zoo.setFood();
-//     zoo.setCell();
+        Ostrich straus = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый", 10,20);
+        Ostrich straus1 = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый", 10,20);
+        Ostrich straus2 = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый", 10,20);
+        Ostrich straus4 = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый", 10,20);
 
-        Ostrich straus = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый");
-        Shark akula = new Shark("Средний", "Серая", "Вася", 120);
-       // System.out.println(zoo.getCellsCount()); // количество клеток
+        Shark akula = new Shark("Средний", "Серая", "Вася", 120,10,20);
         zoo.addAnimal(straus);
-        zoo.addAnimal(akula);
+       // zoo.addAnimal(akula);
+        zoo.addAnimal(straus1);
+        zoo.addAnimal(straus2);
+        zoo.addAnimal(straus4);
+
         zoo.printZooStatus();
-        //zoo.getEmptyCellsCount();
-        //zoo.NumFreeCell();
-      // System.out.println(zoo.getAnimalTypes());
-        //   zoo.addAnimal(Straus, akula);
-        // System.out.println(straus.toString());
-        // Cell cell = new Cell();
-        // Ostrich Straus = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый");
-        // Shark akula = new Shark("Средний","Серая","Вася",120);
+
 
 
         //Cleaner sergei = new Cleaner(12, "22.01.11","Убрал 2 вальера");

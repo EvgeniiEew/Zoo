@@ -1,6 +1,8 @@
 package by.home.zoo;
 
+import by.home.zoo.interfaces.Daily;
 import by.home.zoo.models.animals.Animal;
+import by.home.zoo.service.DailyService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +10,23 @@ import java.util.List;
 import static by.home.zoo.util.CommonUtils.isListWithObjectType;
 import static by.home.zoo.util.CommonUtils.isObjectsClassesEquals;
 
-public class Cell {
-    List<Animal> animalList = new ArrayList<>();
-    int capacity = 0; // сделать копасити поле которое
+public class Cell implements Daily {
+
+    private final List<Animal> animalList = new ArrayList<>();
+    private int capacity = 1;
+    private int purity = 100;
+
+    public Cell(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public int getEmptyPlaces() {
+        return this.capacity - this.getAnimalsCount();
+    }
 
     public String getAnimalsType() { //получить тип животных
         if (!animalList.isEmpty()) {
@@ -54,7 +70,22 @@ public class Cell {
         return null;
     }
 
+    public int getPurity(){
+        return this.purity;
+    }
 
+    public void updatePurity() {
+        int allAnimalsPurity = 0;
+        for (Animal animal : animalList) {
+            allAnimalsPurity = allAnimalsPurity + animal.doDirtPerDay;
+        }
+        this.purity = purity - allAnimalsPurity;
+    }
+
+    @Override
+    public void doDaily(DailyService dailyService) {
+        dailyService.doCellDaily(this);
+    }
 }
 
 

@@ -1,22 +1,22 @@
 package by.home.zoo;
 
+import by.home.zoo.interfaces.Daily;
 import by.home.zoo.models.animals.Animal;
+import by.home.zoo.service.DailyService;
 
 import java.util.HashSet;
 import java.util.List;
 
-public class Zoo { //закрытый конструктор, открытый статический член
+public class Zoo implements Daily { //закрытый конструктор, открытый статический член
     private int food;
-    private byte purity;
+    private int averagePurity = 100;
     HashSet<Cell> cells = new HashSet<>();
 
-    public Zoo(int cellNumber, int food, byte purity) {
+    public Zoo(int cellNumber, int food) {
         for (int i = 1; i <= cellNumber; i++) {
-            cells.add(new Cell());
+            cells.add(new Cell(1));
         }
-
         this.food = food;
-        this.purity = purity;
     }
 
     public int getFood() {
@@ -27,12 +27,12 @@ public class Zoo { //закрытый конструктор, открытый �
         this.food = food;
     }
 
-    public byte getPurity() {
-        return purity;
+    public int getAveragePurity() {
+        return averagePurity;
     }
 
     public void setPurity() {
-        this.purity = purity;
+        this.averagePurity = averagePurity;
     }
 
     public void dayGone(Cell cell) {
@@ -42,7 +42,7 @@ public class Zoo { //закрытый конструктор, открытый �
     public void addAnimal(Animal animal) {
         boolean isAnimalAdded = false;
         for (Cell cell : this.cells) {
-            if (!isAnimalAdded) {
+            if (!isAnimalAdded) { //for (int busySell=0; busySell < capacity ; busySell++) {
                 isAnimalAdded = cell.addAnimal(animal);
             }
         }
@@ -93,8 +93,22 @@ public class Zoo { //закрытый конструктор, открытый �
         stringBuilder.append("\nКоличество пустых клеток - ").append(this.getEmptyCellsCount());
         stringBuilder.append("\nВиды животных в клетках - ").append(this.getAnimalTypes());
         stringBuilder.append("\nКоличество еды - ").append(this.food);
-        stringBuilder.append("\nПроцент чистоты - ").append(this.purity);
+        stringBuilder.append("\nПроцент чистоты - ").append(this.averagePurity);
         System.out.println(stringBuilder.toString());
+    }
+
+
+    @Override
+    public void doDaily(DailyService dailyService) {
+        dailyService.doZooDaily(this);
+    }
+
+    public void updatePurity() {
+        int allAnimalsPurity = 0;
+        for (Cell cell : this.cells) {
+            allAnimalsPurity = allAnimalsPurity + cell.getPurity();
+        }
+        this.averagePurity = allAnimalsPurity / this.cells.size();
     }
 }
 

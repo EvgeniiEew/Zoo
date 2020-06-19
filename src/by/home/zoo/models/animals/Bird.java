@@ -7,8 +7,9 @@ public abstract class Bird extends Animal implements Flying {
     protected boolean canFly;
     protected boolean wingspan; //крылья
 
-    public Bird(String size, String color, String nickname, int weight) {
-        super(size, color, nickname, weight);
+    public Bird(String size, String color, String nickname, int weight, int needFoodPerDay, int doDirtPerDay) {
+        super(size, color, nickname,  weight,  needFoodPerDay,  doDirtPerDay);
+
     }
 
     public abstract void peck(); // клевать

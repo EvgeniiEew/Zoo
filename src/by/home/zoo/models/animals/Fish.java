@@ -10,9 +10,9 @@ public abstract class Fish extends Animal implements Swim {
     public abstract void stare(); // пялиться
 // плеваться камнями
 
-    public Fish(String size, String color, String nickname, int weight) {
+    public Fish(String size, String color, String nickname, int weight, int needFoodPerDay, int doDirtPerDay ) {
 
-        super(size, color, nickname, weight);
+        super(size, color, nickname, weight, needFoodPerDay, doDirtPerDay);
     }
 
 }

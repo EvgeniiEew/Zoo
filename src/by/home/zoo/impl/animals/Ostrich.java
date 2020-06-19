@@ -5,8 +5,8 @@ import by.home.zoo.models.animals.Bird;
 public class Ostrich extends Bird { // страусы
     String maxSpeed;
 
-    public Ostrich(boolean isCanFly, String size, String color, String nickname, int weight, String maxSpeed) {
-        super(size, color, nickname, weight);
+    public Ostrich(boolean isCanFly, String size, String color, String nickname, int weight, String maxSpeed, int needFoodPerDay, int doDirtPerDay) {
+        super(size, color, nickname, weight, needFoodPerDay, doDirtPerDay);
         this.maxSpeed = maxSpeed;
         this.canFly = isCanFly;
     }

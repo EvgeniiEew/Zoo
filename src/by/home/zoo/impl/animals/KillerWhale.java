@@ -4,8 +4,8 @@ import by.home.zoo.models.animals.Fish;
 
 public class KillerWhale extends Fish {
 
-    public KillerWhale(String size, String color, String nickname, int weight) {
-        super(size, color, nickname, weight);
+    public KillerWhale(String size, String color, String nickname, int weight, int needFoodPerDay, int doDirtPerDay) {
+        super(size, color, nickname, weight, needFoodPerDay, doDirtPerDay);
     } //касатки
 
 

@@ -6,12 +6,16 @@ public abstract class Animal implements Entity {
     protected boolean alive;
     public int weight;
     public String size, color, nickname; //размер,цве,кличка
+    public int eatFoodPerDay;
+    public int doDirtPerDay;
 
-    Animal(String size, String color, String nickname, int weight) {
+    public Animal(String size, String color, String nickname, int weight, int eatFoodPerDay, int doDirtPerDay) {
         this.weight = weight;
         this.color = color;
         this.nickname = nickname;
         this.size = size;
+        this.eatFoodPerDay = eatFoodPerDay;
+        this.doDirtPerDay = doDirtPerDay;
     }
 
     public abstract void eat();
