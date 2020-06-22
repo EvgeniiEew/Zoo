@@ -70,7 +70,7 @@ public class Cell implements Daily {
         return null;
     }
 
-    public int getPurity(){
+    public int getPurity() {
         return this.purity;
     }
 

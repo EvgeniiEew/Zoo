@@ -12,11 +12,17 @@ public class Zoo implements Daily { //закрытый конструктор, �
     private int averagePurity = 100;
     HashSet<Cell> cells = new HashSet<>();
 
-    public Zoo(int cellNumber, int food) {
-        for (int i = 1; i <= cellNumber; i++) {
+    public Zoo(int cellsNumber, int food) {
+        for (int i = 1; i <= cellsNumber; i++) {
             cells.add(new Cell(1));
         }
         this.food = food;
+    }
+
+    public void addCell(int cellsNumber, int capacity) {
+        for (int i = 1; i <= cellsNumber; i++) {
+            cells.add(new Cell(capacity));
+        }
     }
 
     public int getFood() {
@@ -27,16 +33,16 @@ public class Zoo implements Daily { //закрытый конструктор, �
         this.food = food;
     }
 
+    public HashSet<Cell> getCells() {
+        return cells;
+    }
+
     public int getAveragePurity() {
         return averagePurity;
     }
 
     public void setPurity() {
         this.averagePurity = averagePurity;
-    }
-
-    public void dayGone(Cell cell) {
-        System.out.println("день прошел");
     }
 
     public void addAnimal(Animal animal) {

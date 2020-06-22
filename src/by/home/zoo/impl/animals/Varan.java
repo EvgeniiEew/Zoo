@@ -4,8 +4,8 @@ import by.home.zoo.models.animals.Reptiles;
 
 public class Varan extends Reptiles {
 
-    public Varan(String size, String color, String nickname, int weight,  int needFoodPerDay, int doDirtPerDay) {
-        super(size, color, nickname, weight,  needFoodPerDay,  doDirtPerDay);
+    public Varan(String size, String color, String nickname, int weight, int needFoodPerDay, int doDirtPerDay) {
+        super(size, color, nickname, weight, needFoodPerDay, doDirtPerDay);
     }
 
     @Override
