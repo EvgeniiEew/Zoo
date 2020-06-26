@@ -3,6 +3,7 @@ package by.home.zoo;
 import by.home.zoo.impl.animals.Crocodile;
 import by.home.zoo.impl.animals.Ostrich;
 import by.home.zoo.impl.animals.Shark;
+import by.home.zoo.impl.humens.Cleaner;
 import by.home.zoo.service.DailyService;
 import by.home.zoo.service.DayScheduler;
 
@@ -20,11 +21,12 @@ public class Runner {
         Shark akula = new Shark("Средний", "Серая", "Вася", 120, 10, 20);
         Crocodile crocodile = new Crocodile(123, "Large", "Brown", "Avon", 180, 60, 30);
 
+        zoo.addCleaner("Vasiiy", 36, 4, 10);
+        zoo.addCleaner("Vladimir", 36, 4, 20);
+        zoo.addCleaner("Nikolay", 24, 2, 30);
+
         zoo.addAnimal(straus);
         zoo.addAnimal(akula);
-        zoo.addAnimal(akula);
-        zoo.addAnimal(crocodile);
-        zoo.addAnimal(crocodile);
         zoo.addAnimal(crocodile);
 
         Timer timer = new Timer();

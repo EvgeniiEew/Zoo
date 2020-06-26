@@ -1,9 +1,11 @@
 package by.home.zoo;
 
+import by.home.zoo.impl.humens.Cleaner;
 import by.home.zoo.interfaces.Daily;
 import by.home.zoo.models.animals.Animal;
 import by.home.zoo.service.DailyService;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 
@@ -11,6 +13,7 @@ public class Zoo implements Daily { //закрытый конструктор, �
     private int food;
     private int averagePurity = 100;
     HashSet<Cell> cells = new HashSet<>();
+    HashSet<Cleaner> cleanerList = new HashSet<>();
 
     public Zoo(int cellsNumber, int food) {
         for (int i = 1; i <= cellsNumber; i++) {
@@ -23,6 +26,11 @@ public class Zoo implements Daily { //закрытый конструктор, �
         for (int i = 1; i <= cellsNumber; i++) {
             cells.add(new Cell(capacity));
         }
+    }
+
+    public void addCleaner(String name, int age, int experience, int ShitPerDayAmount) {
+        Cleaner cleaner = new Cleaner(name, age, experience, new Date(), ShitPerDayAmount, this.cells);
+        cleanerList.add(cleaner);
     }
 
     public int getFood() {
@@ -115,6 +123,10 @@ public class Zoo implements Daily { //закрытый конструктор, �
             allAnimalsPurity = allAnimalsPurity + cell.getPurity();
         }
         this.averagePurity = allAnimalsPurity / this.cells.size();
+    }
+
+    public HashSet<Cleaner> getCleaners() {
+        return this.cleanerList;
     }
 }
 

@@ -39,6 +39,10 @@ public class Cell implements Daily {
         return animalList.size();
     }
 
+    public boolean isClean() {
+        return this.purity == 100;
+    }
+
     public boolean isEmpty() {
         return animalList.isEmpty();
     }
@@ -85,6 +89,17 @@ public class Cell implements Daily {
     @Override
     public void doDaily(DailyService dailyService) {
         dailyService.doCellDaily(this);
+    }
+
+    public int clean(int purityAmount) {
+        this.purity = this.purity + purityAmount;
+        if (this.purity > 100) {
+            int remainingPurity = 0;
+            remainingPurity = this.purity - 100;
+            this.purity = 100;
+            return remainingPurity;
+        }
+        return 0;
     }
 }
 

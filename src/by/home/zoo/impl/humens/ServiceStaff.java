@@ -2,9 +2,11 @@ package by.home.zoo.impl.humens;
 
 import by.home.zoo.models.humans.Workers;
 
+import java.util.Date;
+
 public class ServiceStaff extends Workers { //обслуживаюзий персонал
 
-    public ServiceStaff(int experience, String dateEmployment, int age, String name) {
+    public ServiceStaff(int experience, Date dateEmployment, int age, String name) {
         super(experience, dateEmployment, age, name);
     }
 

@@ -1,7 +1,7 @@
 package by.home.zoo.models.humans;
 
 public abstract class Human {
-    protected boolean alive;
+    protected boolean alive = true;
     protected int age;
     protected String name;
 
