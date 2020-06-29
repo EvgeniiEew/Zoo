@@ -1,6 +1,7 @@
-.idea/*
+/.idea/
 *.class
 *.war
 *.jar
 *.ear
-.out/*
+/out/
+/target/
