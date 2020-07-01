@@ -3,6 +3,7 @@ package by.home.zoo;
 import by.home.zoo.impl.humens.Cleaner;
 import by.home.zoo.interfaces.Daily;
 import by.home.zoo.models.animals.Animal;
+import by.home.zoo.models.utils.ZooStatus;
 import by.home.zoo.service.DailyService;
 
 import java.util.Date;
@@ -101,14 +102,14 @@ public class Zoo implements Daily { //закрытый конструктор, �
     }
 
     public void printZooStatus() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Статус зоопарка \n");
-        stringBuilder.append("\nКоличество клеток - ").append(this.getCellsCount());
-        stringBuilder.append("\nКоличество пустых клеток - ").append(this.getEmptyCellsCount());
-        stringBuilder.append("\nВиды животных в клетках - ").append(this.getAnimalTypes());
-        stringBuilder.append("\nКоличество еды - ").append(this.food);
-        stringBuilder.append("\nПроцент чистоты - ").append(this.averagePurity);
-        System.out.println(stringBuilder.toString());
+        ZooStatus zooStatus = new ZooStatus(
+                this.cells.size(),
+                this.getEmptyCellsCount(),
+                this.getAnimalTypes(),
+                this.food,
+                this.averagePurity
+        );
+        zooStatus.printToJSON();
     }
 
 
