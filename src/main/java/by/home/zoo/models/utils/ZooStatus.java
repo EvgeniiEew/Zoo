@@ -1,5 +1,7 @@
 package by.home.zoo.models.utils;
 
+import java.io.*;
+
 import com.google.gson.Gson;
 
 public class ZooStatus {
@@ -36,8 +38,15 @@ public class ZooStatus {
         Gson gson = new Gson();
         String jsonString = gson.toJson(this);
         System.out.println(jsonString); //<-
-        //? write to report.json file
+        try (FileWriter writer = new FileWriter("C:/Users/Jack/Desktop/Zoo/src/main/resources/report.json", true)) {
+            writer.write(jsonString);
+            writer.append('\n');
+
+            writer.flush();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
+}
 
 //    public void saveToDataBase(){};
-}
