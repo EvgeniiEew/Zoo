@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 
-public class Zoo implements Daily { //закрытый конструктор, открытый статический член
+public class Zoo implements Daily {
     private int food;
     private int averagePurity = 100;
     HashSet<Cell> cells = new HashSet<>();
@@ -82,6 +82,7 @@ public class Zoo implements Daily { //закрытый конструктор, �
         return cells.size();
     }
 
+    // Add stream.reduce
     public int getEmptyCellsCount() {
         int count = 0;
         for (Cell cell : this.cells) {
@@ -92,6 +93,7 @@ public class Zoo implements Daily { //закрытый конструктор, �
         return count;
     }
 
+    // Add reduce
     public String getAnimalTypes() {
         String types = "";
         for (Cell cell : this.cells) {

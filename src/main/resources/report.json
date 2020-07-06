@@ -1,19 +1,50 @@
 {
-  "Количество клеток": 112,
-  "Количество пустых клеток": 12,
-  "Виды животных в клетках": ["Shark", "Ostrich", "Crocodile"],
-  "Количество еды": 100,
-  "Процент чистоты": 93.2
+ "day1" : {
+   "cellsCount": 3,
+   "emptyCellsCount": 0,
+   "existingAnimalTypes": "Ostrich Shark Crocodile ",
+   "foodCount": 100,
+   "purityPercentage": 80
+ }
 }
-{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":80}
-{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":70}
-{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":60}
 {"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":90}
 {"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":80}
 {"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":70}
 {"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":60}
 {"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":50}
 {"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":40}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":30}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":20}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":10}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":0}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":-10}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":-20}
 {"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":90}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":80}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":70}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":60}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":50}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":40}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":30}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":90}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":80}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":70}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":90}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":80}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":70}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":60}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":50}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":40}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":30}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":20}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":10}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":0}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":-10}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":-20}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":-30}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":-40}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":-50}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":-60}
+{"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":-70}
 {"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":90}
 {"cellsCount":3,"emptyCellsCount":0,"existingAnimalTypes":"Ostrich Shark Crocodile ","foodCount":100,"purityPercentage":80}

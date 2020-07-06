@@ -37,7 +37,7 @@ public class ZooStatus {
     public void printToJSON() {
         Gson gson = new Gson();
         String jsonString = gson.toJson(this);
-        System.out.println(jsonString); //<-
+        System.out.println(jsonString);
         try (FileWriter writer = new FileWriter("C:/Users/Jack/Desktop/Zoo/src/main/resources/report.json", true)) {
             writer.write(jsonString);
             writer.append('\n');
