@@ -16,6 +16,11 @@ public class AnimalSpecialist extends Administration {
 
     }
 
+    //заказать еду
+    public void orderFood() {
+
+    }
+
     @Override
     public void checkTheQualityOfWork() {
 

@@ -1,6 +1,6 @@
 package by.home.zoo;
 
-import by.home.zoo.impl.humens.Cleaner;
+import by.home.zoo.impl.humens.ServiceStaff;
 import by.home.zoo.interfaces.Daily;
 import by.home.zoo.models.animals.Animal;
 import by.home.zoo.models.utils.ZooStatus;
@@ -14,7 +14,7 @@ public class Zoo implements Daily {
     private int food;
     private int averagePurity = 100;
     HashSet<Cell> cells = new HashSet<>();
-    HashSet<Cleaner> cleanerList = new HashSet<>();
+    HashSet<ServiceStaff> serviceStaffList = new HashSet<>();
 
     public Zoo(int cellsNumber, int food) {
         for (int i = 1; i <= cellsNumber; i++) {
@@ -30,8 +30,8 @@ public class Zoo implements Daily {
     }
 
     public void addCleaner(String name, int age, int experience, int ShitPerDayAmount) {
-        Cleaner cleaner = new Cleaner(name, age, experience, new Date(), ShitPerDayAmount, this.cells);
-        cleanerList.add(cleaner);
+        ServiceStaff serviceStaff = new ServiceStaff(name, age, experience, new Date(), ShitPerDayAmount, this.cells);
+        serviceStaffList.add(serviceStaff);
     }
 
     public int getFood() {
@@ -128,8 +128,8 @@ public class Zoo implements Daily {
         this.averagePurity = allAnimalsPurity / this.cells.size();
     }
 
-    public HashSet<Cleaner> getCleaners() {
-        return this.cleanerList;
+    public HashSet<ServiceStaff> getCleaners() {
+        return this.serviceStaffList;
     }
 }
 
