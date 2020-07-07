@@ -6,6 +6,7 @@ import by.home.zoo.models.animals.Animal;
 import by.home.zoo.models.utils.ZooStatus;
 import by.home.zoo.service.DailyService;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -105,6 +106,7 @@ public class Zoo implements Daily {
 
     public void printZooStatus() {
         ZooStatus zooStatus = new ZooStatus(
+                this.foodPerDay(),
                 this.cells.size(),
                 this.getEmptyCellsCount(),
                 this.getAnimalTypes(),
@@ -113,6 +115,24 @@ public class Zoo implements Daily {
         );
         zooStatus.printToJSON();
     }
+
+    public void updateFood() {
+        int allAnimalFoodPerDay = 0;
+        for (Cell cell: this.cells) {
+            int animalFoodNeed = cell.getAnimalFoodDay();
+            allAnimalFoodPerDay = allAnimalFoodPerDay + animalFoodNeed;
+        } this.food = food - allAnimalFoodPerDay;
+    }
+
+    public int foodPerDay (){
+        int allAnimalFoodPerDay = 0;
+        for (Cell cell: this.cells) {
+            int animalFoodNeed = cell.getAnimalFoodDay();
+            allAnimalFoodPerDay = allAnimalFoodPerDay + animalFoodNeed;}
+        return allAnimalFoodPerDay;
+    }
+
+
 
 
     @Override

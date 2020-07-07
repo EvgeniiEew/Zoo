@@ -10,17 +10,20 @@ public class ZooStatus {
     public String existingAnimalTypes;
     public int foodCount;
     public int purityPercentage;
+    public int foodPerDay;
 
-    public ZooStatus(int cellsCount,
-                     int emptyCellsCount,
-                     String existingAnimalTypes,
-                     int foodCount,
-                     int purityPercentage) {
+    public ZooStatus(int foodPerDay,
+            int cellsCount,
+            int emptyCellsCount,
+            String existingAnimalTypes,
+            int foodCount,
+            int purityPercentage) {
         this.cellsCount = cellsCount;
         this.emptyCellsCount = emptyCellsCount;
         this.existingAnimalTypes = existingAnimalTypes;
         this.foodCount = foodCount;
         this.purityPercentage = purityPercentage;
+        this.foodPerDay = foodPerDay;
     }
 
     public void printToConsole() {

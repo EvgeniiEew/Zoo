@@ -35,6 +35,14 @@ public class Cell implements Daily {
         return "";
     }
 
+    public int getAnimalFoodDay() {
+        int allAnimalsEatday = 0;
+        for (Animal animal : animalList) {
+            allAnimalsEatday = allAnimalsEatday + animal.eatFoodPerDay;
+        }
+        return allAnimalsEatday;
+    }
+
     public int getAnimalsCount() { //получиьь количество животных
         return animalList.size();
     }
