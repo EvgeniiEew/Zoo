@@ -11,19 +11,21 @@ public class ZooStatus {
     public int foodCount;
     public int purityPercentage;
     public int foodPerDay;
+    public int dirtPerDayAnimals;
 
     public ZooStatus(int foodPerDay,
             int cellsCount,
             int emptyCellsCount,
             String existingAnimalTypes,
             int foodCount,
-            int purityPercentage) {
+            int purityPercentage, int dirtPerDayAnimals) {
         this.cellsCount = cellsCount;
         this.emptyCellsCount = emptyCellsCount;
         this.existingAnimalTypes = existingAnimalTypes;
         this.foodCount = foodCount;
         this.purityPercentage = purityPercentage;
         this.foodPerDay = foodPerDay;
+        this.dirtPerDayAnimals = dirtPerDayAnimals;
     }
 
     public void printToConsole() {

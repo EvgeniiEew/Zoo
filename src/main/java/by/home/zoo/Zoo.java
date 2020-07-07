@@ -6,7 +6,6 @@ import by.home.zoo.models.animals.Animal;
 import by.home.zoo.models.utils.ZooStatus;
 import by.home.zoo.service.DailyService;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -14,6 +13,7 @@ import java.util.List;
 public class Zoo implements Daily {
     private int food;
     private int averagePurity = 100;
+    private int dirtPerDayAnimals; //!
     HashSet<Cell> cells = new HashSet<>();
     HashSet<ServiceStaff> serviceStaffList = new HashSet<>();
 
@@ -23,7 +23,15 @@ public class Zoo implements Daily {
         }
         this.food = food;
     }
-
+//!
+    public int updatePutityToDayAllAnimal(){
+        int allAnimalsPurity = 0;
+        for (Cell cell : this.cells) {
+            allAnimalsPurity = allAnimalsPurity + cell.putityToDayAllAnimal();
+        }
+        this.dirtPerDayAnimals = allAnimalsPurity;
+        return dirtPerDayAnimals;
+    }
     public void addCell(int cellsNumber, int capacity) {
         for (int i = 1; i <= cellsNumber; i++) {
             cells.add(new Cell(capacity));
@@ -111,29 +119,29 @@ public class Zoo implements Daily {
                 this.getEmptyCellsCount(),
                 this.getAnimalTypes(),
                 this.food,
-                this.averagePurity
+                this.averagePurity,
+                this.updatePutityToDayAllAnimal()
         );
         zooStatus.printToJSON();
     }
 
     public void updateFood() {
         int allAnimalFoodPerDay = 0;
-        for (Cell cell: this.cells) {
+        for (Cell cell : this.cells) {
             int animalFoodNeed = cell.getAnimalFoodDay();
             allAnimalFoodPerDay = allAnimalFoodPerDay + animalFoodNeed;
-        } this.food = food - allAnimalFoodPerDay;
+        }
+        this.food = food - allAnimalFoodPerDay;
     }
 
-    public int foodPerDay (){
+    public int foodPerDay() {
         int allAnimalFoodPerDay = 0;
-        for (Cell cell: this.cells) {
+        for (Cell cell : this.cells) {
             int animalFoodNeed = cell.getAnimalFoodDay();
-            allAnimalFoodPerDay = allAnimalFoodPerDay + animalFoodNeed;}
+            allAnimalFoodPerDay = allAnimalFoodPerDay + animalFoodNeed;
+        }
         return allAnimalFoodPerDay;
     }
-
-
-
 
     @Override
     public void doDaily(DailyService dailyService) {

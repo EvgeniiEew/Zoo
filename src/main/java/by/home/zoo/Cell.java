@@ -94,6 +94,14 @@ public class Cell implements Daily {
         this.purity = purity - allAnimalsPurity;
     }
 
+    public int putityToDayAllAnimal(){
+        int allAnimalsPurity = 0;
+        for (Animal animal : animalList) {
+            allAnimalsPurity = allAnimalsPurity + animal.doDirtPerDay;
+        }
+        return allAnimalsPurity;
+    }
+
     @Override
     public void doDaily(DailyService dailyService) {
         dailyService.doCellDaily(this);
