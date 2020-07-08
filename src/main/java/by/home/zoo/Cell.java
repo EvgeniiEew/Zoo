@@ -94,12 +94,12 @@ public class Cell implements Daily {
         this.purity = purity - allAnimalsPurity;
     }
 
-    public int putityToDayAllAnimal(){
-        int allAnimalsPurity = 0;
+    public int getAllAnimalsDirt(){
+        int allAnimalsDirt = 0;
         for (Animal animal : animalList) {
-            allAnimalsPurity = allAnimalsPurity + animal.doDirtPerDay;
+            allAnimalsDirt = allAnimalsDirt + animal.doDirtPerDay;
         }
-        return allAnimalsPurity;
+        return allAnimalsDirt;
     }
 
     @Override

@@ -9,11 +9,11 @@ import by.home.zoo.service.DailyService;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Zoo implements Daily {
     private int food;
     private int averagePurity = 100;
-    private int dirtPerDayAnimals; //!
     HashSet<Cell> cells = new HashSet<>();
     HashSet<ServiceStaff> serviceStaffList = new HashSet<>();
 
@@ -23,15 +23,15 @@ public class Zoo implements Daily {
         }
         this.food = food;
     }
-//!
-    public int updatePutityToDayAllAnimal(){
-        int allAnimalsPurity = 0;
+
+    public int getDirtFormationPerDay() {
+        int allAnimalsDirt = 0;
         for (Cell cell : this.cells) {
-            allAnimalsPurity = allAnimalsPurity + cell.putityToDayAllAnimal();
+            allAnimalsDirt = allAnimalsDirt + cell.getAllAnimalsDirt();
         }
-        this.dirtPerDayAnimals = allAnimalsPurity;
-        return dirtPerDayAnimals;
+        return allAnimalsDirt;
     }
+
     public void addCell(int cellsNumber, int capacity) {
         for (int i = 1; i <= cellsNumber; i++) {
             cells.add(new Cell(capacity));
@@ -120,25 +120,19 @@ public class Zoo implements Daily {
                 this.getAnimalTypes(),
                 this.food,
                 this.averagePurity,
-                this.updatePutityToDayAllAnimal()
+                this.getDirtFormationPerDay()
         );
         zooStatus.printToJSON();
     }
 
     public void updateFood() {
-        int allAnimalFoodPerDay = 0;
-        for (Cell cell : this.cells) {
-            int animalFoodNeed = cell.getAnimalFoodDay();
-            allAnimalFoodPerDay = allAnimalFoodPerDay + animalFoodNeed;
-        }
-        this.food = food - allAnimalFoodPerDay;
+        this.food = food - this.cells.stream().map(Cell::getAnimalFoodDay).reduce(Integer::sum).get();
     }
 
     public int foodPerDay() {
         int allAnimalFoodPerDay = 0;
         for (Cell cell : this.cells) {
-            int animalFoodNeed = cell.getAnimalFoodDay();
-            allAnimalFoodPerDay = allAnimalFoodPerDay + animalFoodNeed;
+            allAnimalFoodPerDay = allAnimalFoodPerDay + cell.getAnimalFoodDay();
         }
         return allAnimalFoodPerDay;
     }
