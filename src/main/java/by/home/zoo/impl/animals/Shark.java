@@ -8,6 +8,11 @@ public class Shark extends Fish {
         super(size, color, nickname, weight, needFoodPerDay, doDirtPerDay);
     }
 
+    @Override
+    public int getDoDirtPerDay() {
+        return doDirtPerDay;
+    }
+
     protected boolean hunt(boolean x) { // охотиться
         return true;
     }

@@ -9,6 +9,11 @@ public class Varan extends Reptiles {
     }
 
     @Override
+    public int getDoDirtPerDay() {
+        return doDirtPerDay;
+    }
+
+    @Override
     public void bite() {
 
     }

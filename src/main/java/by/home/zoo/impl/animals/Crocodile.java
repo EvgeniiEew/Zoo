@@ -30,6 +30,11 @@ public class Crocodile extends Reptiles { //крокодилы
     }
 
     @Override
+    public int getDoDirtPerDay() {
+        return doDirtPerDay;
+    }
+
+    @Override
     public void eat() {
 
     }

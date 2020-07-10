@@ -12,7 +12,7 @@ import java.util.Timer;
 public class Runner {
 
     public static void main(String[] args) {
-        Zoo zoo = new Zoo(0, 100);
+        Zoo zoo = new Zoo(0, 100, 650000L);
         DailyService dailyService = new DailyService();
 
         zoo.addCell(3, 5);
@@ -20,6 +20,8 @@ public class Runner {
         Ostrich straus = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый", 3, 10);
         Shark akula = new Shark("Средний", "Серая", "Вася", 120, 10, 2);
         Crocodile crocodile = new Crocodile(123, "Large", "Brown", "Avon", 180, 4, 30);
+
+        zoo.addAnimalSpecialist(23, "Cярожа",10);
 
         zoo.addCleaner("Vasiiy", 36, 4, 10);
         zoo.addCleaner("Vladimir", 36, 4, 20);

@@ -9,6 +9,11 @@ public class DingoDog extends Mammals {
     }
 
     @Override
+    public int getDoDirtPerDay() {
+        return  doDirtPerDay;
+    }
+
+    @Override
     public void milkFeeding() {
 
     }

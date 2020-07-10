@@ -1,28 +1,33 @@
 package by.home.zoo;
 
+import by.home.zoo.impl.humens.AnimalSpecialist;
 import by.home.zoo.impl.humens.ServiceStaff;
 import by.home.zoo.interfaces.Daily;
 import by.home.zoo.models.animals.Animal;
+import by.home.zoo.models.utils.SupplyStorage;
 import by.home.zoo.models.utils.ZooStatus;
 import by.home.zoo.service.DailyService;
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Zoo implements Daily {
-    private int food;
+    private final SupplyStorage supplyStorage;
     private int averagePurity = 100;
+    private long money;
     HashSet<Cell> cells = new HashSet<>();
     HashSet<ServiceStaff> serviceStaffList = new HashSet<>();
+    HashSet<AnimalSpecialist> animalSpecialists = new HashSet<>();
 
-    public Zoo(int cellsNumber, int food) {
+    public Zoo(int cellsNumber, int food, long money) {
         for (int i = 1; i <= cellsNumber; i++) {
             cells.add(new Cell(1));
         }
-        this.food = food;
+        this.supplyStorage = new SupplyStorage(food);
+        this.money = money;
     }
+
 
     public int getDirtFormationPerDay() {
         int allAnimalsDirt = 0;
@@ -38,17 +43,19 @@ public class Zoo implements Daily {
         }
     }
 
+    public void addAnimalSpecialist(int age, String name, int maxFoodToAnimalsPerDay) {
+        AnimalSpecialist animalSpecial = new AnimalSpecialist(age, name, maxFoodToAnimalsPerDay, this.cells, this.supplyStorage);
+        animalSpecialists.add(animalSpecial);
+    }
+
+    public long updateMoney() {
+        this.money = money - animalSpecialists.stream().map(AnimalSpecialist::GetMoney).reduce(Long::sum).get();
+        return this.money;
+    }
+
     public void addCleaner(String name, int age, int experience, int ShitPerDayAmount) {
         ServiceStaff serviceStaff = new ServiceStaff(name, age, experience, new Date(), ShitPerDayAmount, this.cells);
         serviceStaffList.add(serviceStaff);
-    }
-
-    public int getFood() {
-        return food;
-    }
-
-    public void setFood() {
-        this.food = food;
     }
 
     public HashSet<Cell> getCells() {
@@ -114,25 +121,27 @@ public class Zoo implements Daily {
 
     public void printZooStatus() {
         ZooStatus zooStatus = new ZooStatus(
-                this.foodPerDay(),
                 this.cells.size(),
                 this.getEmptyCellsCount(),
                 this.getAnimalTypes(),
-                this.food,
+                this.supplyStorage.food,
                 this.averagePurity,
-                this.getDirtFormationPerDay()
+                this.foodPerDay(),
+                this.getDirtFormationPerDay(),
+                this.updateMoney()
         );
         zooStatus.printToJSON();
     }
 
     public void updateFood() {
-        this.food = food - this.cells.stream().map(Cell::getAnimalFoodDay).reduce(Integer::sum).get();
+//        this.supplyStorage.food = supplyStorage.food + this.animalSpecialists.stream().map(AnimalSpecialist::getFood).reduce(Integer::sum).get();
+        this.supplyStorage.food = supplyStorage.food - this.cells.stream().map(Cell::getNecessaryDailyFood).reduce(Integer::sum).get();
     }
 
     public int foodPerDay() {
         int allAnimalFoodPerDay = 0;
         for (Cell cell : this.cells) {
-            allAnimalFoodPerDay = allAnimalFoodPerDay + cell.getAnimalFoodDay();
+            allAnimalFoodPerDay = allAnimalFoodPerDay + cell.getNecessaryDailyFood();
         }
         return allAnimalFoodPerDay;
     }
@@ -143,15 +152,15 @@ public class Zoo implements Daily {
     }
 
     public void updatePurity() {
-        int allAnimalsPurity = 0;
-        for (Cell cell : this.cells) {
-            allAnimalsPurity = allAnimalsPurity + cell.getPurity();
-        }
-        this.averagePurity = allAnimalsPurity / this.cells.size();
+        this.averagePurity = this.cells.stream().map(Cell::getPurity).reduce(Integer::sum).get() / this.cells.size();
     }
 
     public HashSet<ServiceStaff> getCleaners() {
         return this.serviceStaffList;
+    }
+
+    public HashSet<AnimalSpecialist> getAnimalSpecialists() {
+        return this.animalSpecialists;
     }
 }
 

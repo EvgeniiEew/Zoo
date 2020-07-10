@@ -40,6 +40,11 @@ public class Parrot extends Bird implements Speak { //попугаи
     }
 
     @Override
+    public int getDoDirtPerDay() {
+        return doDirtPerDay;
+    }
+
+    @Override
     public void eat() {
 
     }

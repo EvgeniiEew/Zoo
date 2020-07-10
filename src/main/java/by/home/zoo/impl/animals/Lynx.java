@@ -10,6 +10,11 @@ public class Lynx extends Mammals {
     }
 
     @Override
+    public int getDoDirtPerDay() {
+        return doDirtPerDay;
+    }
+
+    @Override
     public void milkFeeding() {
 
     }

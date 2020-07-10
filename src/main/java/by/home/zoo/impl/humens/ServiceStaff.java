@@ -14,6 +14,7 @@ public class ServiceStaff extends Workers implements Daily { //убиорщик�
     protected String amountOfCleaned; // количество убраного
     int maxDailyPurity; // количества убираемого дерьма в день
     int remainingDailyPurity;
+    int salary;
     HashSet<Cell> cells;
 
     public ServiceStaff(
@@ -35,8 +36,7 @@ public class ServiceStaff extends Workers implements Daily { //убиорщик�
     }
 
     //получить зп
-    public void getSalary() {
-
+    public  void  getSalary() {
     }
 
     //убрать територию метод
@@ -51,7 +51,7 @@ public class ServiceStaff extends Workers implements Daily { //убиорщик�
 
     @Override
     public void think() {
-        System.out.println("уборщик думает ...");
+        System.out.println("...");
     }
 
     @Override

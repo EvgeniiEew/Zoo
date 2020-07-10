@@ -15,6 +15,7 @@ public class Cell implements Daily {
     private final List<Animal> animalList = new ArrayList<>();
     private int capacity = 1;
     private int purity = 100;
+    private int food = 0;
 
     public Cell(int capacity) {
         this.capacity = capacity;
@@ -35,12 +36,12 @@ public class Cell implements Daily {
         return "";
     }
 
-    public int getAnimalFoodDay() {
-        int allAnimalsEatday = 0;
-        for (Animal animal : animalList) {
-            allAnimalsEatday = allAnimalsEatday + animal.eatFoodPerDay;
-        }
-        return allAnimalsEatday;
+    public void addFood(int food){
+        this.food =this.food + food;
+    }
+
+    public int getNecessaryDailyFood() {
+        return this.animalList.stream().map(animal -> animal.eatFoodPerDay).reduce((a, b) -> a + b).get();
     }
 
     public int getAnimalsCount() { //получиьь количество животных
@@ -87,19 +88,11 @@ public class Cell implements Daily {
     }
 
     public void updatePurity() {
-        int allAnimalsPurity = 0;
-        for (Animal animal : animalList) {
-            allAnimalsPurity = allAnimalsPurity + animal.doDirtPerDay;
-        }
-        this.purity = purity - allAnimalsPurity;
+        this.purity = purity - this.animalList.stream().map(Animal::getDoDirtPerDay).reduce(Integer::sum).get();
     }
 
-    public int getAllAnimalsDirt(){
-        int allAnimalsDirt = 0;
-        for (Animal animal : animalList) {
-            allAnimalsDirt = allAnimalsDirt + animal.doDirtPerDay;
-        }
-        return allAnimalsDirt;
+    public int getAllAnimalsDirt() {
+        return this.animalList.stream().map(Animal::getDoDirtPerDay).reduce(Integer::sum).get();
     }
 
     @Override

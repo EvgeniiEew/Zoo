@@ -8,6 +8,11 @@ public class KillerWhale extends Fish {
         super(size, color, nickname, weight, needFoodPerDay, doDirtPerDay);
     } //касатки
 
+    @Override
+    public int getDoDirtPerDay() {
+        return doDirtPerDay;
+    }
+
 
     protected void sing() {  //петь
 

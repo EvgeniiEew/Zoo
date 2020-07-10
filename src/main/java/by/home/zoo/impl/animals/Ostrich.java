@@ -36,6 +36,11 @@ public class Ostrich extends Bird { // страусы
     }
 
     @Override
+    public int getDoDirtPerDay() {
+        return doDirtPerDay;
+    }
+
+    @Override
     public void eat() {
 
     }

@@ -17,7 +17,7 @@ public abstract class Animal implements Entity {
         this.eatFoodPerDay = eatFoodPerDay;
         this.doDirtPerDay = doDirtPerDay;
     }
-
+    public abstract  int getDoDirtPerDay();
     public abstract void eat();
 
     public abstract void sleep();
