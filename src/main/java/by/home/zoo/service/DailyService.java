@@ -16,8 +16,6 @@ public class DailyService {
 
     public void doZooDaily(Zoo zoo) {
         zoo.updatePurity();
-        zoo.updateFood();
-        zoo.updateMoney();
     }
 
     public void doCellDaily(Cell cell) {

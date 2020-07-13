@@ -29,14 +29,11 @@ public class AnimalSpecialist extends Administration implements Daily {
     }
 
     public void healAnimal() { //лечить животных
-
     }
 
     public void orderDrugs() {//заказать лекарство
-
     }
 
-    //заказать еду
     public void feedAnimals() {
         for (Cell cell : cells) {
             if (cell.getNecessaryDailyFood() >= this.remainingFoodToAnimalsPerDay) {
@@ -51,14 +48,17 @@ public class AnimalSpecialist extends Administration implements Daily {
     }
 
     public void updateDailyRemainingFood() {
-        this.remainingFoodToAnimalsPerDay = this.maxFoodToAnimalsPerDay;
+        if (this.remainingFoodToAnimalsPerDay > 0) {
+            int surplus = this.maxFoodToAnimalsPerDay - this.remainingFoodToAnimalsPerDay;
+            this.remainingFoodToAnimalsPerDay = this.remainingFoodToAnimalsPerDay + this.supplyStorage.getFood(surplus);
+            return;
+        }
+        this.remainingFoodToAnimalsPerDay = this.supplyStorage.getFood(this.maxFoodToAnimalsPerDay);
     }
-
 
     public long GetMoney() {
         return this.moneySpent;
     }
-
 
     @Override
     public void checkTheQualityOfWork() {

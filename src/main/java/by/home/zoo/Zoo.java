@@ -28,7 +28,6 @@ public class Zoo implements Daily {
         this.money = money;
     }
 
-
     public int getDirtFormationPerDay() {
         int allAnimalsDirt = 0;
         for (Cell cell : this.cells) {
@@ -48,10 +47,10 @@ public class Zoo implements Daily {
         animalSpecialists.add(animalSpecial);
     }
 
-    public long updateMoney() {
-        this.money = money - animalSpecialists.stream().map(AnimalSpecialist::GetMoney).reduce(Long::sum).get();
-        return this.money;
-    }
+//    public long updateMoney() {
+//        this.money = money - animalSpecialists.stream().map(AnimalSpecialist::GetMoney).reduce(Long::sum).get();
+//        return this.money;
+//    }
 
     public void addCleaner(String name, int age, int experience, int ShitPerDayAmount) {
         ServiceStaff serviceStaff = new ServiceStaff(name, age, experience, new Date(), ShitPerDayAmount, this.cells);
@@ -60,14 +59,6 @@ public class Zoo implements Daily {
 
     public HashSet<Cell> getCells() {
         return cells;
-    }
-
-    public int getAveragePurity() {
-        return averagePurity;
-    }
-
-    public void setPurity() {
-        this.averagePurity = averagePurity;
     }
 
     public void addAnimal(Animal animal) {
@@ -128,14 +119,14 @@ public class Zoo implements Daily {
                 this.averagePurity,
                 this.foodPerDay(),
                 this.getDirtFormationPerDay(),
-                this.updateMoney()
+//                this.updateMoney()
         );
         zooStatus.printToJSON();
     }
 
     public void updateFood() {
 //        this.supplyStorage.food = supplyStorage.food + this.animalSpecialists.stream().map(AnimalSpecialist::getFood).reduce(Integer::sum).get();
-        this.supplyStorage.food = supplyStorage.food - this.cells.stream().map(Cell::getNecessaryDailyFood).reduce(Integer::sum).get();
+//        this.supplyStorage.food = supplyStorage.food - this.cells.stream().map(Cell::getNecessaryDailyFood).reduce(Integer::sum).get();
     }
 
     public int foodPerDay() {

@@ -17,11 +17,11 @@ public class Runner {
 
         zoo.addCell(3, 5);
 
-        Ostrich straus = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый", 3, 10);
+        Ostrich straus = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый", 5, 10);
         Shark akula = new Shark("Средний", "Серая", "Вася", 120, 10, 2);
-        Crocodile crocodile = new Crocodile(123, "Large", "Brown", "Avon", 180, 4, 30);
+        Crocodile crocodile = new Crocodile(123, "Large", "Brown", "Avon", 180, 5, 30);
 
-        zoo.addAnimalSpecialist(23, "Cярожа",10);
+        zoo.addAnimalSpecialist(60, "Vasa",30);
 
         zoo.addCleaner("Vasiiy", 36, 4, 10);
         zoo.addCleaner("Vladimir", 36, 4, 20);
