@@ -2,27 +2,29 @@ package by.home.zoo.impl.humens;
 
 import by.home.zoo.Cell;
 import by.home.zoo.interfaces.Daily;
-import by.home.zoo.models.humans.Administration;
+import by.home.zoo.models.humans.Worker;
 import by.home.zoo.models.utils.SupplyStorage;
 import by.home.zoo.service.DailyService;
 
+import java.util.Date;
 import java.util.HashSet;
 
-public class AnimalSpecialist extends Administration implements Daily {
-    int maxFoodToAnimalsPerDay;
-    int remainingFoodToAnimalsPerDay;
-    HashSet<Cell> cells;
-    long moneySpent;
+public class AnimalSpecialist extends Worker implements Daily {
+    private int maxFoodToAnimalsPerDay;
+    private int remainingFoodToAnimalsPerDay;
+    private HashSet<Cell> cells;
     private final SupplyStorage supplyStorage;
 
     public AnimalSpecialist(int age,
                             String name,
+                            int salary,
+                            Date employmentDate,
                             int maxFoodToAnimalsPerDay,
                             HashSet<Cell> cells,
                             SupplyStorage supplyStorage
 
     ) {
-        super(age, name);
+        super(salary, employmentDate, age, name);
         this.maxFoodToAnimalsPerDay = maxFoodToAnimalsPerDay;
         this.cells = cells;
         this.supplyStorage = supplyStorage;
@@ -56,20 +58,6 @@ public class AnimalSpecialist extends Administration implements Daily {
         this.remainingFoodToAnimalsPerDay = this.supplyStorage.getFood(this.maxFoodToAnimalsPerDay);
     }
 
-    public long GetMoney() {
-        return this.moneySpent;
-    }
-
-    @Override
-    public void checkTheQualityOfWork() {
-
-    }
-
-    @Override
-    public void relax() {
-
-    }
-
     @Override
     public void think() {
 
@@ -81,12 +69,17 @@ public class AnimalSpecialist extends Administration implements Daily {
     }
 
     @Override
-    public boolean lead() {
-        return false;
+    public void doDaily(DailyService dailyService) {
+        dailyService.doAnimalSpecialistDaily(this);
     }
 
     @Override
-    public void doDaily(DailyService dailyService) {
-        dailyService.doAnimalSpecialistDaily(this);
+    public void currentWorkVolume() {
+
+    }
+
+    @Override
+    public boolean work() {
+        return false;
     }
 }

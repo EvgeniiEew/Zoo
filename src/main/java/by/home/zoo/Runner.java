@@ -2,7 +2,6 @@ package by.home.zoo;
 
 import by.home.zoo.impl.animals.Crocodile;
 import by.home.zoo.impl.animals.Ostrich;
-import by.home.zoo.impl.animals.Parrot;
 import by.home.zoo.impl.animals.Shark;
 import by.home.zoo.service.DailyService;
 import by.home.zoo.service.DayScheduler;
@@ -21,8 +20,8 @@ public class Runner {
         Shark akula = new Shark("Средний", "Серая", "Вася", 120, 10, 2);
         Crocodile crocodile = new Crocodile(123, "Large", "Brown", "Avon", 180, 5, 30);
 
-        zoo.addAnimalSpecialist(60, "Vasa",30);
-
+        zoo.addAnimalSpecialist(30,"vasa",800,30);
+        zoo.addBoogalter(20,40,"valera",20,500);
         zoo.addCleaner("Vasiiy", 36, 4, 10);
         zoo.addCleaner("Vladimir", 36, 4, 20);
         zoo.addCleaner("Nikolay", 24, 2, 0);
@@ -30,10 +29,6 @@ public class Runner {
         zoo.addAnimal(straus);
         zoo.addAnimal(akula);
         zoo.addAnimal(crocodile);
-
-//        zoo.printZooStatus();
-//
-//        stringJOb.statusPrintln();
 
         Timer timer = new Timer();
         timer.schedule(new DayScheduler(zoo, dailyService), 0, 5000);

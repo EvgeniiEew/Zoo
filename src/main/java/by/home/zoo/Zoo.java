@@ -1,9 +1,12 @@
 package by.home.zoo;
 
 import by.home.zoo.impl.humens.AnimalSpecialist;
+import by.home.zoo.impl.humens.Boogalter;
 import by.home.zoo.impl.humens.ServiceStaff;
 import by.home.zoo.interfaces.Daily;
 import by.home.zoo.models.animals.Animal;
+import by.home.zoo.models.humans.Worker;
+import by.home.zoo.models.utils.SafeMoney;
 import by.home.zoo.models.utils.SupplyStorage;
 import by.home.zoo.models.utils.ZooStatus;
 import by.home.zoo.service.DailyService;
@@ -14,18 +17,20 @@ import java.util.List;
 
 public class Zoo implements Daily {
     private final SupplyStorage supplyStorage;
+    private final SafeMoney safeMoney;
     private int averagePurity = 100;
-    private long money;
     HashSet<Cell> cells = new HashSet<>();
     HashSet<ServiceStaff> serviceStaffList = new HashSet<>();
     HashSet<AnimalSpecialist> animalSpecialists = new HashSet<>();
+    HashSet<Boogalter> boogalters = new HashSet<>();
+
 
     public Zoo(int cellsNumber, int food, long money) {
         for (int i = 1; i <= cellsNumber; i++) {
             cells.add(new Cell(1));
         }
         this.supplyStorage = new SupplyStorage(food);
-        this.money = money;
+        this.safeMoney = new SafeMoney(money);
     }
 
     public int getDirtFormationPerDay() {
@@ -42,11 +47,23 @@ public class Zoo implements Daily {
         }
     }
 
-    public void addAnimalSpecialist(int age, String name, int maxFoodToAnimalsPerDay) {
-        AnimalSpecialist animalSpecial = new AnimalSpecialist(age, name, maxFoodToAnimalsPerDay, this.cells, this.supplyStorage);
+    public void addAnimalSpecialist(int age, String name, int experience, int maxFoodToAnimalsPerDay) {
+        AnimalSpecialist animalSpecial = new AnimalSpecialist(age, name, experience, new Date(),
+                maxFoodToAnimalsPerDay, this.cells, this.supplyStorage);
         animalSpecialists.add(animalSpecial);
     }
 
+    public void addBoogalter(int experience, int age, String name, int maxFoodOrder, long salaryAmount) {
+        HashSet<Worker> workers = new HashSet<>();
+        workers.addAll(this.serviceStaffList);
+        workers.addAll(this.animalSpecialists);
+        workers.addAll(boogalters);
+        Boogalter boogalter = new Boogalter(experience, new Date(), age,
+                name, maxFoodOrder, salaryAmount,
+                this.supplyStorage, this.safeMoney, workers);
+        boogalters.add(boogalter);
+
+    }
 //    public long updateMoney() {
 //        this.money = money - animalSpecialists.stream().map(AnimalSpecialist::GetMoney).reduce(Long::sum).get();
 //        return this.money;
@@ -118,8 +135,8 @@ public class Zoo implements Daily {
                 this.supplyStorage.food,
                 this.averagePurity,
                 this.foodPerDay(),
-                this.getDirtFormationPerDay()
-//                this.updateMoney()
+                this.getDirtFormationPerDay(),
+                this.safeMoney.money
         );
         zooStatus.printToJSON();
     }
@@ -152,6 +169,10 @@ public class Zoo implements Daily {
 
     public HashSet<AnimalSpecialist> getAnimalSpecialists() {
         return this.animalSpecialists;
+    }
+
+    public HashSet<Boogalter> getBoogalters() {
+        return this.boogalters;
     }
 }
 
