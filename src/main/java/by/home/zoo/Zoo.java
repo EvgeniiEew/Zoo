@@ -118,7 +118,7 @@ public class Zoo implements Daily {
                 this.supplyStorage.food,
                 this.averagePurity,
                 this.foodPerDay(),
-                this.getDirtFormationPerDay(),
+                this.getDirtFormationPerDay()
 //                this.updateMoney()
         );
         zooStatus.printToJSON();
