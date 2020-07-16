@@ -48,6 +48,10 @@ public class Boogalter extends Worker implements Work, SalaryGeveOut, Daily {
         }
     }
 
+    public void sellTickets() {
+        this.safeMoney.addMoney((long) (Math.random() * 1000));
+    }
+
     @Override
     public void currentWorkVolume() {
 

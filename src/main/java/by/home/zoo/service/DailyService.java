@@ -33,8 +33,10 @@ public class DailyService {
         serviceStaff.updateDailyRemainingPurity();
         serviceStaff.cleanCells();
     }
-    public void doBoogalterDaily(Boogalter boogalter){
+
+    public void doBoogalterDaily(Boogalter boogalter) {
         boogalter.orderFood();
         boogalter.salaryGeveOut();
+        boogalter.sellTickets();
     }
 }
