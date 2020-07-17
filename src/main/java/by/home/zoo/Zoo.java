@@ -1,7 +1,7 @@
 package by.home.zoo;
 
 import by.home.zoo.impl.humens.AnimalSpecialist;
-import by.home.zoo.impl.humens.Boogalter;
+import by.home.zoo.impl.humens.Accountant;
 import by.home.zoo.impl.humens.ServiceStaff;
 import by.home.zoo.interfaces.Daily;
 import by.home.zoo.models.animals.Animal;
@@ -22,7 +22,7 @@ public class Zoo implements Daily {
     HashSet<Cell> cells = new HashSet<>();
     HashSet<ServiceStaff> serviceStaffList = new HashSet<>();
     HashSet<AnimalSpecialist> animalSpecialists = new HashSet<>();
-    HashSet<Boogalter> boogalters = new HashSet<>();
+    HashSet<Accountant> accountants = new HashSet<>();
 
 
     public Zoo(int cellsNumber, int food, long money) {
@@ -47,21 +47,20 @@ public class Zoo implements Daily {
         }
     }
 
-    public void addAnimalSpecialist(int age, String name, int experience, int maxFoodToAnimalsPerDay) {
-        AnimalSpecialist animalSpecial = new AnimalSpecialist(age, name, experience, new Date(),
+    public void addAnimalSpecialist(int age, String name, int salary, int maxFoodToAnimalsPerDay) {
+        AnimalSpecialist animalSpecial = new AnimalSpecialist(age, name, salary, new Date(),
                 maxFoodToAnimalsPerDay, this.cells, this.supplyStorage);
         animalSpecialists.add(animalSpecial);
     }
 
-    public void addBoogalter(int experience, int age, String name, int maxFoodOrder, long salaryAmount) {
+    public void addBoogalter(int salary, int age, String name, int maxFoodOrder) {
         HashSet<Worker> workers = new HashSet<>();
         workers.addAll(this.serviceStaffList);
         workers.addAll(this.animalSpecialists);
-        workers.addAll(boogalters);
-        Boogalter boogalter = new Boogalter(experience, new Date(), age,
-                name, maxFoodOrder, salaryAmount,
+        workers.addAll(accountants);
+        Accountant accountant = new Accountant(salary, new Date(), age, name, maxFoodOrder,
                 this.supplyStorage, this.safeMoney, workers);
-        boogalters.add(boogalter);
+        accountants.add(accountant);
 
     }
 //    public long updateMoney() {
@@ -69,8 +68,8 @@ public class Zoo implements Daily {
 //        return this.money;
 //    }
 
-    public void addCleaner(String name, int age, int experience, int ShitPerDayAmount) {
-        ServiceStaff serviceStaff = new ServiceStaff(name, age, experience, new Date(), ShitPerDayAmount, this.cells);
+    public void addCleaner(String name, int age, int salary, int ShitPerDayAmount) {
+        ServiceStaff serviceStaff = new ServiceStaff(name, age, salary, new Date(), ShitPerDayAmount, this.cells);
         serviceStaffList.add(serviceStaff);
     }
 
@@ -171,8 +170,8 @@ public class Zoo implements Daily {
         return this.animalSpecialists;
     }
 
-    public HashSet<Boogalter> getBoogalters() {
-        return this.boogalters;
+    public HashSet<Accountant> getBoogalters() {
+        return this.accountants;
     }
 }
 

@@ -3,7 +3,7 @@ package by.home.zoo.service;
 import by.home.zoo.Cell;
 import by.home.zoo.Zoo;
 import by.home.zoo.impl.humens.AnimalSpecialist;
-import by.home.zoo.impl.humens.Boogalter;
+import by.home.zoo.impl.humens.Accountant;
 import by.home.zoo.impl.humens.ServiceStaff;
 
 public class DailyService {
@@ -11,7 +11,7 @@ public class DailyService {
     public void doFullZooDaily(Zoo zoo) {
         zoo.getCells().forEach(cell -> cell.doDaily(this));
         zoo.getCleaners().forEach(serviceStaff -> serviceStaff.doDaily(this));
-        zoo.getBoogalters().forEach(boogalter -> boogalter.doDaily(this));
+        zoo.getBoogalters().forEach(accountant -> accountant.doDaily(this));
         zoo.getAnimalSpecialists().forEach(animalSpecialist -> animalSpecialist.doDaily(this));
         zoo.doDaily(this);
     }
@@ -34,9 +34,9 @@ public class DailyService {
         serviceStaff.cleanCells();
     }
 
-    public void doBoogalterDaily(Boogalter boogalter) {
-        boogalter.orderFood();
-        boogalter.salaryGeveOut();
-        boogalter.sellTickets();
+    public void doBoogalterDaily(Accountant accountant) {
+        accountant.orderFood();
+        accountant.payOutSalary();
+        accountant.sellTickets();
     }
 }

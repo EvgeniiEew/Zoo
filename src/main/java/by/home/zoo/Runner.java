@@ -20,11 +20,11 @@ public class Runner {
         Shark akula = new Shark("Средний", "Серая", "Вася", 120, 10, 2);
         Crocodile crocodile = new Crocodile(123, "Large", "Brown", "Avon", 180, 5, 30);
 
-        zoo.addAnimalSpecialist(30,"vasa",800,30);
-        zoo.addBoogalter(20,40,"valera",20,500);
-        zoo.addCleaner("Vasiiy", 36, 4, 10);
-        zoo.addCleaner("Vladimir", 36, 4, 20);
-        zoo.addCleaner("Nikolay", 24, 2, 0);
+        zoo.addAnimalSpecialist(30,"vasa",500,30);
+        zoo.addBoogalter(500,40,"valera",20);
+        zoo.addCleaner("Vasiiy", 36, 500, 10);
+        zoo.addCleaner("Vladimir", 36, 500, 20);
+        zoo.addCleaner("Nikolay", 24, 500, 0);
 
         zoo.addAnimal(straus);
         zoo.addAnimal(akula);
