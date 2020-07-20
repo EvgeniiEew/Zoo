@@ -1,0 +1,12 @@
+{
+  "maxSpeed": "быстрый",
+  "canFly": false,
+  "wingspan": false,
+  "alive": false,
+  "weight": 80,
+  "size": "Стредний",
+  "color": "коричневый",
+  "nickname": "Антон",
+  "eatFoodPerDay": 5,
+  "doDirtPerDay": 10
+}
