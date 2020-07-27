@@ -13,11 +13,11 @@ public class Shark extends Fish {
         return doDirtPerDay;
     }
 
-    protected boolean hunt(boolean x) { // охотиться
+    protected boolean hunt(boolean x) {
         return true;
     }
 
-    protected void feelBlood() { //почуять кроу
+    protected void feelBlood() {
 
     }
 

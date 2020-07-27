@@ -24,17 +24,19 @@ public class Runner {
         //  Ostrich straus = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый", 5, 10);
         String fileName = "C:\\Users\\Jack\\Desktop\\Zoo\\src\\main\\resources\\animals.json";
         try {
-            String line = Files.lines(Paths.get(fileName)).reduce("", String::concat);
+            String line = Files.lines(Paths.get(fileName)).reduce("", String::concat).substring(0,204);
+            String line1 = Files.lines(Paths.get(fileName)).reduce("", String::concat).substring(204,376);
             Gson gson = new Gson();
             Ostrich straus = gson.fromJson(line, Ostrich.class);
+            Shark akula = gson.fromJson(line1, Shark.class);
             zoo.addAnimal(straus);
-
+            zoo.addAnimal(akula);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        //Shark akula = new Shark("Средний", "Серая", "Вася", 120, 10, 2);
 
-        Shark akula = new Shark("Средний", "Серая", "Вася", 120, 10, 2);
         Crocodile crocodile = new Crocodile(123, "Large", "Brown", "Avon", 180, 5, 30);
 
         zoo.addAnimalSpecialist(30, "vasa", 500, 30);
@@ -44,7 +46,7 @@ public class Runner {
         zoo.addCleaner("Nikolay", 24, 500, 0);
 
 
-        zoo.addAnimal(akula);
+       // zoo.addAnimal(akula);
         zoo.addAnimal(crocodile);
 
         Timer timer = new Timer();

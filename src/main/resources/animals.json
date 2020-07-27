@@ -10,3 +10,14 @@
   "eatFoodPerDay": 5,
   "doDirtPerDay": 10
 }
+{
+  "finAmount": 0,
+  "teethAmount": 0,
+  "alive": false,
+  "weight": 120,
+  "size": "Средний",
+  "color": "Серая",
+  "nickname": "Вася",
+  "eatFoodPerDay": 10,
+  "doDirtPerDay": 2
+}
