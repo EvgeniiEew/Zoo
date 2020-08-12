@@ -18,9 +18,7 @@ public class Runner {
     public static void main(String[] args) {
         Zoo zoo = new Zoo(0, 100, 650000L);
         DailyService dailyService = new DailyService();
-
         zoo.addCell(3, 5);
-
         //  Ostrich straus = new Ostrich(false, "Стредний", "коричневый", "Антон", 80, "быстрый", 5, 10);
         String fileName = "C:\\Users\\Jack\\Desktop\\Zoo\\src\\main\\resources\\animals.json";
         try {
