@@ -13,9 +13,9 @@ import static by.home.zoo.util.CommonUtils.isObjectsClassesEquals;
 public class Cell implements Daily {
 
     private final List<Animal> animalList = new ArrayList<>();
-    private int capacity = 1;
-    private int purity = 100;
-    private int food = 0;
+    private int capacity = 1;/// int , not null
+    private int purity = 100;//
+    private int food = 0;//
 
     public Cell(int capacity) {
         this.capacity = capacity;

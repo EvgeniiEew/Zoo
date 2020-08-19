@@ -16,13 +16,13 @@ import java.util.HashSet;
 import java.util.List;
 
 public class Zoo implements Daily {
-    private final SupplyStorage supplyStorage;
-    private final SafeMoney safeMoney;
+    private final SupplyStorage supplyStorage;//
+    private final SafeMoney safeMoney;//
     private int averagePurity = 100;
-    HashSet<Cell> cells = new HashSet<>();
-    HashSet<ServiceStaff> serviceStaffList = new HashSet<>();
-    HashSet<AnimalSpecialist> animalSpecialists = new HashSet<>();
-    HashSet<Accountant> accountants = new HashSet<>();
+    HashSet<Cell> cells = new HashSet<>();//
+    HashSet<ServiceStaff> serviceStaffList = new HashSet<>();//
+    HashSet<AnimalSpecialist> animalSpecialists = new HashSet<>();//
+    HashSet<Accountant> accountants = new HashSet<>();//
 
 
     public Zoo(int cellsNumber, int food, long money) {
