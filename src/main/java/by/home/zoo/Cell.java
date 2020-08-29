@@ -1,7 +1,7 @@
 package by.home.zoo;
 
 import by.home.zoo.interfaces.Daily;
-import by.home.zoo.models.animals.Animal;
+import by.home.zoo.entity.Animal;
 import by.home.zoo.service.DailyService;
 
 import java.util.ArrayList;

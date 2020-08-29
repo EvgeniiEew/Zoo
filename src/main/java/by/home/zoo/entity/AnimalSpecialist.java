@@ -1,9 +1,8 @@
-package by.home.zoo.impl.humens;
+package by.home.zoo.entity;
 
 import by.home.zoo.Cell;
 import by.home.zoo.interfaces.Daily;
 import by.home.zoo.models.humans.Worker;
-import by.home.zoo.models.utils.SupplyStorage;
 import by.home.zoo.service.DailyService;
 
 import java.util.Date;

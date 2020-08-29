@@ -1,14 +1,8 @@
-package by.home.zoo;
+package by.home.zoo.entity;
 
-import by.home.zoo.impl.humens.AnimalSpecialist;
-import by.home.zoo.impl.humens.Accountant;
-import by.home.zoo.impl.humens.ServiceStaff;
+import by.home.zoo.Cell;
 import by.home.zoo.interfaces.Daily;
-import by.home.zoo.models.animals.Animal;
 import by.home.zoo.models.humans.Worker;
-import by.home.zoo.models.utils.SafeMoney;
-import by.home.zoo.models.utils.SupplyStorage;
-import by.home.zoo.models.utils.ZooStatus;
 import by.home.zoo.service.DailyService;
 
 import java.util.Date;
@@ -17,7 +11,7 @@ import java.util.List;
 
 public class Zoo implements Daily {
     private final SupplyStorage supplyStorage;//
-    private final SafeMoney safeMoney;//
+    private final BankAccount bankAccount;//
     private int averagePurity = 100;
     HashSet<Cell> cells = new HashSet<>();//
     HashSet<ServiceStaff> serviceStaffList = new HashSet<>();//
@@ -30,7 +24,7 @@ public class Zoo implements Daily {
             cells.add(new Cell(1));
         }
         this.supplyStorage = new SupplyStorage(food);
-        this.safeMoney = new SafeMoney(money);
+        this.bankAccount = new BankAccount(money);
     }
 
     public int getDirtFormationPerDay() {
@@ -59,7 +53,7 @@ public class Zoo implements Daily {
         workers.addAll(this.animalSpecialists);
         workers.addAll(accountants);
         Accountant accountant = new Accountant(salary, new Date(), age, name, maxFoodOrder,
-                this.supplyStorage, this.safeMoney, workers);
+                this.supplyStorage, this.bankAccount, workers);
         accountants.add(accountant);
 
     }
@@ -127,7 +121,7 @@ public class Zoo implements Daily {
     }
 
     public void printZooStatus() {
-        ZooStatus zooStatus = new ZooStatus(
+        ZooLog zooLog = new ZooLog(
                 this.cells.size(),
                 this.getEmptyCellsCount(),
                 this.getAnimalTypes(),
@@ -135,9 +129,9 @@ public class Zoo implements Daily {
                 this.averagePurity,
                 this.foodPerDay(),
                 this.getDirtFormationPerDay(),
-                this.safeMoney.money
+                this.bankAccount.money
         );
-        zooStatus.printToJSON();
+        zooLog.printToJSON();
     }
 
     public void updateFood() {

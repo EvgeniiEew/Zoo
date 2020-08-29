@@ -1,6 +1,6 @@
 package by.home.zoo.service;
 
-import by.home.zoo.Zoo;
+import by.home.zoo.entity.Zoo;
 
 import java.util.TimerTask;
 

@@ -1,4 +1,4 @@
-package by.home.zoo.impl.humens;
+package by.home.zoo.entity;
 
 import by.home.zoo.Cell;
 import by.home.zoo.interfaces.Daily;

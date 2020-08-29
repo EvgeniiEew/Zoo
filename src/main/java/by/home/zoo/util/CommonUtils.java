@@ -1,6 +1,6 @@
 package by.home.zoo.util;
 
-import by.home.zoo.models.animals.Animal;
+import by.home.zoo.entity.Animal;
 
 import java.util.List;
 

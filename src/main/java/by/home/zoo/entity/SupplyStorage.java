@@ -1,4 +1,4 @@
-package by.home.zoo.models.utils;
+package by.home.zoo.entity;
 
 public class SupplyStorage {
     public int food;

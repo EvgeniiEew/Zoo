@@ -1,4 +1,4 @@
-package by.home.zoo.models.utils;
+package by.home.zoo.entity;
 
 import java.io.*;
 

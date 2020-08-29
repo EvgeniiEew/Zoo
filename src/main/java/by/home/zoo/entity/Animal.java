@@ -1,4 +1,4 @@
-package by.home.zoo.models.animals;
+package by.home.zoo.entity;
 import by.home.zoo.enums.Size;
 import by.home.zoo.interfaces.Entity;
 
