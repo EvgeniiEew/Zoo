@@ -4,7 +4,7 @@ import java.io.*;
 
 import com.google.gson.Gson;
 
-public class ZooStatus {
+public class ZooLog {
     public int cellsCount;
     public int emptyCellsCount;
     public String existingAnimalTypes;
@@ -14,11 +14,11 @@ public class ZooStatus {
     public int dirtPerDayAnimals;
     public long moneyZoo;
 
-    public ZooStatus(int cellsCount,
-            int emptyCellsCount,
-            String existingAnimalTypes,
-            int foodCount,
-            int purityPercentage,int foodPerDay, int dirtPerDayAnimals,long moneyZoo) {
+    public ZooLog(int cellsCount,
+                  int emptyCellsCount,
+                  String existingAnimalTypes,
+                  int foodCount,
+                  int purityPercentage, int foodPerDay, int dirtPerDayAnimals, long moneyZoo) {
         this.cellsCount = cellsCount;
         this.emptyCellsCount = emptyCellsCount;
         this.existingAnimalTypes = existingAnimalTypes;
