@@ -51,10 +51,10 @@ public class AnimalSpecialist extends Worker implements Daily {
     public void updateDailyRemainingFood() {
         if (this.remainingFoodToAnimalsPerDay > 0) {
             int surplus = this.maxFoodToAnimalsPerDay - this.remainingFoodToAnimalsPerDay;
-            this.remainingFoodToAnimalsPerDay = this.remainingFoodToAnimalsPerDay + this.supplyStorage.getFood(surplus);
+            this.remainingFoodToAnimalsPerDay = this.remainingFoodToAnimalsPerDay + this.supplyStorage.takeFood(surplus);
             return;
         }
-        this.remainingFoodToAnimalsPerDay = this.supplyStorage.getFood(this.maxFoodToAnimalsPerDay);
+        this.remainingFoodToAnimalsPerDay = this.supplyStorage.takeFood(this.maxFoodToAnimalsPerDay);
     }
 
     @Override
