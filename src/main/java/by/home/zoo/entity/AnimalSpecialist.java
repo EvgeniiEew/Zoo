@@ -8,7 +8,7 @@ import by.home.zoo.service.DailyService;
 import java.util.Date;
 import java.util.HashSet;
 
-public class AnimalSpecialist extends Worker implements Daily {
+public class AnimalSpecialist implements Daily {
     private int maxFoodToAnimalsPerDay;
     private int remainingFoodToAnimalsPerDay;
     private HashSet<Cell> cells;

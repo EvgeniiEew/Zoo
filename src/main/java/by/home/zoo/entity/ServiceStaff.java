@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.HashSet;
 
 
-public class ServiceStaff extends Worker implements Daily { //убиорщики
+public class ServiceStaff  implements Daily { //убиорщики
     protected String amountOfCleaned; // количество убраного
     int maxDailyPurity; // количества убираемого дерьма в день
     int remainingDailyPurity;

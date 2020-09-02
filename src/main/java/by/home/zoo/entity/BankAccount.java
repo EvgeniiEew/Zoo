@@ -1,7 +1,19 @@
 package by.home.zoo.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "bank_account")
 public class BankAccount {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "money")
     public long money;
+
+    public BankAccount() {
+    }
 
     public BankAccount(long money) {
         this.money = money;

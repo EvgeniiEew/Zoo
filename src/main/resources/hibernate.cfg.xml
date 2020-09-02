@@ -12,5 +12,8 @@
         <property name="show_sql">true</property>
 
         <mapping class="by.home.zoo.entity.SupplyStorage"/>
+        <mapping class="by.home.zoo.entity.BankAccount"/>
+        <mapping class="by.home.zoo.entity.Accountant"/>
+        <mapping class="by.home.zoo.entity.Zoo"/>
     </session-factory>
 </hibernate-configuration>

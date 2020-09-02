@@ -2,48 +2,85 @@ package by.home.zoo.entity;
 
 import by.home.zoo.interfaces.Daily;
 import by.home.zoo.interfaces.Work;
-import by.home.zoo.models.humans.Worker;
 import by.home.zoo.service.DailyService;
 
+import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
 
-public class Accountant extends Worker implements Work, Daily {
+@Entity
+@Table(name = "accountants")
+
+public class Accountant implements Work, Daily {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "max_food_order")
     private int maxFoodOrder;
-    private final SupplyStorage supplyStorage;
-    private final BankAccount bankAccount;
-    private final HashSet<Worker> workers;
 
-    public Accountant(int salary, Date dateEmployment, int age,
-                      String name, int maxFoodOrder,
-                      SupplyStorage supplyStorage, BankAccount bankAccount,
-                      HashSet<Worker> workers) {
-        super(salary, dateEmployment, age, name);
+    @Column(name = "salary")
+    private int salary;
+
+    @Column(name = "date_employment")
+    private Date dateEmployment;
+
+    @Column(name = "age")
+    private int age;
+
+    @Column(name = "name")
+    private String name;
+
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "zoo_id")
+    private Zoo zoo;
+
+//    private SupplyStorage supplyStorage;
+//    private BankAccount bankAccount;
+
+//    private HashSet<Worker> workers;
+
+    public Accountant() {
+    }
+
+    public Accountant(int maxFoodOrder, int salary, Date dateEmployment, int age, String name, Zoo zoo) {
         this.maxFoodOrder = maxFoodOrder;
-        this.supplyStorage = supplyStorage;
-        this.bankAccount = bankAccount;
-        this.workers = workers;
+        this.salary = salary;
+        this.dateEmployment = dateEmployment;
+        this.age = age;
+        this.name = name;
+        this.zoo = zoo;
     }
 
-    public void payOutSalary() {
-        long workersSalary = this.workers.stream().map(Worker::getSalary).reduce(Integer::sum).get();
-        bankAccount.getMoney(workersSalary);
-    }
+    //    public Accountant(int salary, Date dateEmployment, int age,
+//                      String name, int maxFoodOrder,
+//                      SupplyStorage supplyStorage, BankAccount bankAccount,
+//                      HashSet<Worker> workers) {
+//        super(salary, dateEmployment, age, name);
+//        this.maxFoodOrder = maxFoodOrder;
+//        this.supplyStorage = supplyStorage;
+//        this.bankAccount = bankAccount;
+//        this.workers = workers;
+//    }
 
-    public void orderFood() {
-        long moneyToFood = maxFoodOrder * 14;
-        long getMoneyToFood = bankAccount.getMoney(moneyToFood);
-        if (getMoneyToFood < moneyToFood) {
-            int recalculationOfTheAmountOfFood = (int) getMoneyToFood / 14;
-            supplyStorage.addFood(recalculationOfTheAmountOfFood);
-        } else {
-            supplyStorage.addFood(maxFoodOrder);
-        }
-    }
-
-    public void sellTickets() {
-        this.bankAccount.addMoney((long) (Math.random() * 10000));
-    }
+//    public void payOutSalary() {
+//        long workersSalary = this.workers.stream().map(Worker::getSalary).reduce(Integer::sum).get();
+//        bankAccount.getMoney(workersSalary);
+//    }
+//
+//    public void orderFood() {
+//        long moneyToFood = maxFoodOrder * 14;
+//        long getMoneyToFood = bankAccount.getMoney(moneyToFood);
+//        if (getMoneyToFood < moneyToFood) {
+//            int recalculationOfTheAmountOfFood = (int) getMoneyToFood / 14;
+//            supplyStorage.addFood(recalculationOfTheAmountOfFood);
+//        } else {
+//            supplyStorage.addFood(maxFoodOrder);
+//        }
+//    }
+//
+//    public void sellTickets() {
+//        this.bankAccount.addMoney((long) (Math.random() * 10000));
+//    }
 
     @Override
     public void currentWorkVolume() {
