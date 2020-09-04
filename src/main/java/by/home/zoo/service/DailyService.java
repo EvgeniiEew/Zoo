@@ -1,6 +1,6 @@
 package by.home.zoo.service;
 
-import by.home.zoo.Cell;
+import by.home.zoo.entity.Cell;
 import by.home.zoo.entity.Zoo;
 import by.home.zoo.entity.AnimalSpecialist;
 import by.home.zoo.entity.Accountant;

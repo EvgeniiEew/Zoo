@@ -3,14 +3,14 @@ package by.home.zoo.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "bank_account")
+@Table(name = "bank_accounts")
 public class BankAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "money")
-    public long money;
+    private long money;
 
     public BankAccount() {
     }

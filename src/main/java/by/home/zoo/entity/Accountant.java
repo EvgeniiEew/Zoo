@@ -9,26 +9,25 @@ import java.util.Date;
 
 @Entity
 @Table(name = "accountants")
-
 public class Accountant implements Work, Daily {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @Column(name = "max_food_order")
-    private int maxFoodOrder;
-
-    @Column(name = "salary")
-    private int salary;
-
-    @Column(name = "date_employment")
-    private Date dateEmployment;
 
     @Column(name = "age")
     private int age;
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "salary")
+    private int salary;
+
+    @Column(name = "employment_date")
+    private Date dateEmployment;
+
+    @Column(name = "max_food_order")
+    private int maxFoodOrder;
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "zoo_id")
@@ -42,16 +41,16 @@ public class Accountant implements Work, Daily {
     public Accountant() {
     }
 
-    public Accountant(int maxFoodOrder, int salary, Date dateEmployment, int age, String name, Zoo zoo) {
-        this.maxFoodOrder = maxFoodOrder;
-        this.salary = salary;
-        this.dateEmployment = dateEmployment;
+    public Accountant(int age, String name, int salary, Date dateEmployment, int maxFoodOrder, Zoo zoo) {
         this.age = age;
         this.name = name;
+        this.salary = salary;
+        this.dateEmployment = dateEmployment;
+        this.maxFoodOrder = maxFoodOrder;
         this.zoo = zoo;
     }
 
-    //    public Accountant(int salary, Date dateEmployment, int age,
+//    public Accountant(int salary, Date dateEmployment, int age,
 //                      String name, int maxFoodOrder,
 //                      SupplyStorage supplyStorage, BankAccount bankAccount,
 //                      HashSet<Worker> workers) {
@@ -82,25 +81,25 @@ public class Accountant implements Work, Daily {
 //        this.bankAccount.addMoney((long) (Math.random() * 10000));
 //    }
 
-    @Override
-    public void currentWorkVolume() {
-
-    }
+//    @Override
+//    public void currentWorkVolume() {
+//
+//    }
 
     @Override
     public boolean work() {
         return false;
     }
 
-    @Override
-    public void think() {
+//    @Override
+//    public void think() {
 
-    }
+//    }
 
-    @Override
-    public void talk() {
+//    @Override
+//    public void talk() {
 
-    }
+//    }
 
     @Override
     public void doDaily(DailyService dailyService) {

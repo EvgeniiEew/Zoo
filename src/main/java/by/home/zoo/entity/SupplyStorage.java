@@ -3,14 +3,15 @@ package by.home.zoo.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "supply_storage")
+@Table(name = "supply_storages")
 public class SupplyStorage {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "food")
-    public int food;
+    private int food;
 
     public SupplyStorage() {
     }

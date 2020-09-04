@@ -1,12 +1,31 @@
 package by.home.zoo.entity;
-import by.home.zoo.enums.Size;
+
 import by.home.zoo.interfaces.Entity;
 
-public abstract class Animal  implements Entity {
-    public int weight;
-    public String nickname;
-    public int eatFoodPerDay;
-    public int doDirtPerDay;
+import javax.persistence.*;
+
+@javax.persistence.Entity
+@Table(name = "animals")
+public class Animal implements Entity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "nickname")
+    private String nickname;
+
+    @Column(name = "weight")
+    private int weight;
+
+    @Column(name = "eat_food_per_day")
+    private int eatFoodPerDay;
+
+    @Column(name = "do_dirt_per_day")
+    private int doDirtPerDay;
+
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "cell_id")
+    private Cell cell;
 
     public Animal(String nickname, int weight, int eatFoodPerDay, int doDirtPerDay) {
         this.weight = weight;

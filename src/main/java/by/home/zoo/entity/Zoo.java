@@ -1,28 +1,35 @@
 package by.home.zoo.entity;
 
-import by.home.zoo.Cell;
 import by.home.zoo.interfaces.Daily;
-import by.home.zoo.models.humans.Worker;
+//import by.home.zoo.models.humans.Worker;
 import by.home.zoo.service.DailyService;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "zoo")
+@Table(name = "zoos")
 public class Zoo implements Daily {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @OneToOne (optional=false, cascade=CascadeType.ALL)
+    @JoinColumn (name="bank_account_id")
+    private BankAccount bankAccount;
+
+    @OneToOne (optional=false, cascade=CascadeType.ALL)
+    @JoinColumn (name="supply_storage_id")
+    private SupplyStorage supplyStorageSet;
+
     @OneToMany(mappedBy = "zoo", fetch = FetchType.EAGER)
     private Set<Accountant> accountants;
 
-//    private final SupplyStorage supplyStorage;//
+    @OneToMany(mappedBy = "zoo", fetch = FetchType.EAGER)
+    private Set<Cell> cellSet;
+
+    //    private final SupplyStorage supplyStorage;//
 //    private final BankAccount bankAccount;//
 //    private int averagePurity = 100;
 //    HashSet<Cell> cells = new HashSet<>();//

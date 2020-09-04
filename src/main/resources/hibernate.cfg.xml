@@ -11,9 +11,14 @@
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</property>
         <property name="show_sql">true</property>
 
+        <mapping class="by.home.zoo.entity.Zoo"/>
+        <mapping class="by.home.zoo.entity.ZooLog"/>
+        <mapping class="by.home.zoo.entity.Cell"/>
         <mapping class="by.home.zoo.entity.SupplyStorage"/>
         <mapping class="by.home.zoo.entity.BankAccount"/>
         <mapping class="by.home.zoo.entity.Accountant"/>
-        <mapping class="by.home.zoo.entity.Zoo"/>
+        <mapping class="by.home.zoo.entity.AnimalSpecialist"/>
+        <mapping class="by.home.zoo.entity.ServiceStaff"/>
+        <mapping class="by.home.zoo.entity.Animal"/>
     </session-factory>
 </hibernate-configuration>
