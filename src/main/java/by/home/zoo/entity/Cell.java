@@ -1,6 +1,7 @@
 package by.home.zoo.entity;
 
 import by.home.zoo.interfaces.Daily;
+import by.home.zoo.service.DailyService;
 
 import javax.persistence.*;
 
@@ -33,6 +34,11 @@ public class Cell implements Daily {
         this.purity = purity;
         this.food = food;
         this.zoo = zoo;
+    }
+
+    @Override
+    public void doDaily(DailyService dailyService) {
+
     }
 
 //    public int getCapacity() {

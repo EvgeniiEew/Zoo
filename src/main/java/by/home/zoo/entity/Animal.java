@@ -34,9 +34,23 @@ public class Animal implements Entity {
         this.doDirtPerDay = doDirtPerDay;
     }
 
-    public abstract int getDoDirtPerDay();
+    public Animal() {
 
-    public abstract void eat();
+    }
 
-    public abstract void sleep();
+//    public abstract int getDoDirtPerDay();
+//
+//    public abstract void eat();
+//
+//    public abstract void sleep();
+
+    @Override
+    public boolean isAlive() {
+        return false;
+    }
+
+    @Override
+    public boolean isCanMove() {
+        return false;
+    }
 }

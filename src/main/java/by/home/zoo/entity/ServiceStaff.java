@@ -83,7 +83,7 @@ public class ServiceStaff implements Daily { //убиорщики
 
     @Override
     public void doDaily(DailyService dailyService) {
-        dailyService.doCleanerDaily(this);
+        //dailyService.doCleanerDaily(this);
     }
 
     public void updateDailyRemainingPurity() {

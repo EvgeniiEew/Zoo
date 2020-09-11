@@ -55,6 +55,11 @@ public class AnimalSpecialist implements Daily {
     public void orderDrugs() {//заказать лекарство
     }
 
+    @Override
+    public void doDaily(DailyService dailyService) {
+
+    }
+
 //    public void feedAnimals() {
 //        for (Cell cell : cells) {
 //            if (cell.getNecessaryDailyFood() >= this.remainingFoodToAnimalsPerDay) {
@@ -87,9 +92,9 @@ public class AnimalSpecialist implements Daily {
 //
 //    }
 
-    @Override
-    public void doDaily(DailyService dailyService) {
-        dailyService.doAnimalSpecialistDaily(this);
+  //  @Override
+   // public void doDaily(DailyService dailyService) {
+     //   dailyService.doAnimalSpecialistDaily(this);
     }
 
 //    @Override
@@ -101,4 +106,4 @@ public class AnimalSpecialist implements Daily {
 //    public boolean work() {
 //        return false;
 //    }
-}
+

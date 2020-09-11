@@ -103,6 +103,19 @@ public class Accountant implements Work, Daily {
 
     @Override
     public void doDaily(DailyService dailyService) {
-        dailyService.doBoogalterDaily(this);
+   //     dailyService.doBoogalterDaily(this);
     }
+
+//    public void delete(Accountant deleted) {
+//    }
+//
+//    public Iterable<Accountant> findAllByOrderByTitle() {
+//    }
+//
+//    public Accountant findOne(Long id) {
+//    }
+//
+//    public Accountant save(Accountant persisted) {
+//    }
+//
 }

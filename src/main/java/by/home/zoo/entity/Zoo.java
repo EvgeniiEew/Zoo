@@ -168,7 +168,7 @@ public class Zoo implements Daily {
 //
     @Override
     public void doDaily(DailyService dailyService) {
-        dailyService.doZooDaily(this);
+        //dailyService.doZooDaily(this);
     }
 //
 //    public void updatePurity() {

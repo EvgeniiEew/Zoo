@@ -14,10 +14,15 @@ public class DayScheduler extends TimerTask {
         this.dailyService = dailyService;
     }
 
+    @Override
     public void run() {
-        System.out.println("День - " + this.daysCount + "\n");
-        dailyService.doFullZooDaily(this.zoo);
-        zoo.printZooStatus();
-        this.daysCount++;
+
     }
+
+//    public void run() {
+//        System.out.println("День - " + this.daysCount + "\n");
+//        dailyService.doFullZooDaily(this.zoo);
+//        zoo.printZooStatus();
+//        this.daysCount++;
+//    }
 }
