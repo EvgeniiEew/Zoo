@@ -10,5 +10,4 @@ import java.util.List;
  */
 public interface AccountantRepository extends CrudRepository<Accountant, Long> {
 
-    List<Accountant> findAllByOrderByTitle();
 }

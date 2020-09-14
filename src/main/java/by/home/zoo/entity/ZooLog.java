@@ -10,16 +10,16 @@ import javax.persistence.*;
 @Table(name = "accountants")
 public class ZooLog {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+ @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "cell_count")
     private int cellsCount;
 
-    @Column(name = "empty_cells_count")
+   @Column(name = "empty_cells_count")
     private int emptyCellsCount;
 
-    @Column(name = "existing_animal_types")
+   @Column(name = "existing_animal_types")
     private String existingAnimalTypes;
 
     @Column(name = "food_count")
@@ -56,30 +56,30 @@ public class ZooLog {
         this.zoo = zoo;
     }
 
-    public void printToConsole() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Статус зоопарка \n");
-        stringBuilder.append("\nКоличество клеток - ").append(this.cellsCount);
-        stringBuilder.append("\nКоличество пустых клеток - ").append(this.emptyCellsCount);
-        stringBuilder.append("\nВиды животных в клетках - ").append(this.existingAnimalTypes);
-        stringBuilder.append("\nКоличество еды - ").append(this.foodCount);
-        stringBuilder.append("\nПроцент чистоты - ").append(this.purityPercentage);
-        System.out.println(stringBuilder.toString());
-    }
-
-    public void printToJSON() {
-        Gson gson = new Gson();
-        String jsonString = gson.toJson(this);
-        System.out.println(jsonString);
-        try (FileWriter writer = new FileWriter("C:/Users/Jack/Desktop/Zoo/src/main/resources/report.json", true)) {
-            writer.write(jsonString);
-            writer.append('\n');
-
-            writer.flush();
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
+//    public void printToConsole() {
+//        StringBuilder stringBuilder = new StringBuilder();
+//        stringBuilder.append("Статус зоопарка \n");
+//        stringBuilder.append("\nКоличество клеток - ").append(this.cellsCount);
+//        stringBuilder.append("\nКоличество пустых клеток - ").append(this.emptyCellsCount);
+//        stringBuilder.append("\nВиды животных в клетках - ").append(this.existingAnimalTypes);
+//        stringBuilder.append("\nКоличество еды - ").append(this.foodCount);
+//        stringBuilder.append("\nПроцент чистоты - ").append(this.purityPercentage);
+//        System.out.println(stringBuilder.toString());
+//    }
+//
+//    public void printToJSON() {
+//        Gson gson = new Gson();
+//        String jsonString = gson.toJson(this);
+//        System.out.println(jsonString);
+//        try (FileWriter writer = new FileWriter("C:/Users/Jack/Desktop/Zoo/src/main/resources/report.json", true)) {
+//            writer.write(jsonString);
+//            writer.append('\n');
+//
+//            writer.flush();
+//        } catch (IOException ex) {
+//            System.out.println(ex.getMessage());
+//        }
+//    }
 }
 
 //    public void saveToDataBase(){};

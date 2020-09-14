@@ -1,31 +1,34 @@
 package by.home.zoo.service.entityServices;
 
-import by.home.zoo.entity.Accountant;
-import by.home.zoo.repository.AccountantRepository;
+import by.home.zoo.entity.Animal;
+import by.home.zoo.repository.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 /**
- * Accountant service class
+ * Guide service class
  */
 @Service
-public class AccountantService {
-    @Autowired
-    private AccountantRepository repository;
+public class AnimalService {
 
-    public void delete(Accountant deleted) {
+
+    @Autowired
+    private AnimalRepository repository;
+
+    public void delete(Animal deleted) {
         repository.delete(deleted);
     }
 
-    public Iterable<Accountant> findAll() {
+    public Iterable<Animal> findAll() {
         return repository.findAll();
     }
 
-    public Accountant findOne(Long id) {
+    public Animal findOne(Long id) {
         return repository.findById(id).get();
     }
 
-    public Accountant save(Accountant persisted) {
+    public Animal save(Animal persisted) {
         return repository.save(persisted);
     }
 }

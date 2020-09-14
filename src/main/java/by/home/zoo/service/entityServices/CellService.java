@@ -1,31 +1,33 @@
 package by.home.zoo.service.entityServices;
 
-import by.home.zoo.entity.Accountant;
-import by.home.zoo.repository.AccountantRepository;
+
+import by.home.zoo.entity.Cell;
+import by.home.zoo.repository.CellRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Accountant service class
+ * Tour service class
  */
 @Service
-public class AccountantService {
-    @Autowired
-    private AccountantRepository repository;
+public class CellService{
 
-    public void delete(Accountant deleted) {
+    @Autowired
+    private CellRepository repository;
+
+    public void delete(Cell deleted) {
         repository.delete(deleted);
     }
 
-    public Iterable<Accountant> findAll() {
+    public Iterable<Cell> findAll() {
         return repository.findAll();
     }
 
-    public Accountant findOne(Long id) {
+    public Cell findOne(Long id) {
         return repository.findById(id).get();
     }
 
-    public Accountant save(Accountant persisted) {
+    public Cell save(Cell persisted) {
         return repository.save(persisted);
     }
 }
