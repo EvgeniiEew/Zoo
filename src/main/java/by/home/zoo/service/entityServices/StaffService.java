@@ -23,7 +23,7 @@ public class StaffService{
         return repository.findAll();
     }
 
-    public ServiceStaff findOne(Long id) {
+    public ServiceStaff findOne(Integer id) {
         return repository.findById(id).get();
     }
 

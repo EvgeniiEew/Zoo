@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Animal implements Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "nickname")
     private String nickname;

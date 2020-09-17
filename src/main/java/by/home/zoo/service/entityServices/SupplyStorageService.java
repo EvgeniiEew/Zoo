@@ -22,7 +22,7 @@ public class SupplyStorageService{
         return repository.findAll();
     }
 
-    public SupplyStorage findOne(Long id) {
+    public SupplyStorage findOne(Integer id) {
         return repository.findById(id).get();
     }
 

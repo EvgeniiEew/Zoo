@@ -11,7 +11,7 @@ public class Cell implements Daily {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "capacity")
     private int capacity;

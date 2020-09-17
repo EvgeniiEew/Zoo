@@ -22,7 +22,7 @@ public class BankAccountService  {
         return repository.findAll();
     }
 
-    public BankAccount findOne(Long id) {
+    public BankAccount findOne(Integer id) {
         return repository.findById(id).get();
     }
 

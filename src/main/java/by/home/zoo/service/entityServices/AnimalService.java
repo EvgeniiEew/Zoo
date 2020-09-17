@@ -24,7 +24,7 @@ public class AnimalService {
         return repository.findAll();
     }
 
-    public Animal findOne(Long id) {
+    public Animal findOne(Integer id) {
         return repository.findById(id).get();
     }
 

@@ -19,7 +19,7 @@ public class ZooLogService {
         return repository.findAll();
     }
 
-    public ZooLog findOne(Long id) {
+    public ZooLog findOne(Integer id) {
         return repository.findById(id).get();
     }
 

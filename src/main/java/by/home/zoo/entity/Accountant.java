@@ -12,7 +12,7 @@ import java.util.Date;
 public class Accountant implements Work, Daily {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "age")
     private int age;

@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * JPA repository for roles entity
  */
-public interface AnimalSpecialistRepository extends CrudRepository<AnimalSpecialist, Long> {
+public interface AnimalSpecialistRepository extends CrudRepository<AnimalSpecialist, Integer> {
 
 }

@@ -8,7 +8,7 @@ public class SupplyStorage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "food")
     private int food;

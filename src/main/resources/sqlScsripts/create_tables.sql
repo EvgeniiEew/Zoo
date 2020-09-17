@@ -32,7 +32,7 @@ CREATE table service_staffs
     max_daily_purity       int,
     remaining_daily_purity int,
     salary                 int,
-    employment_date        timestamp(2) with time zone,
+    employment_date        timestamp with time zone default now(),
     age                    int,
     name                   text,
     zoo_id                 INTEGER REFERENCES zoos (id)
@@ -43,7 +43,7 @@ create table animal_specialists
     age                   int,
     name                  text,
     salary                int,
-    employment_date       timestamp(2) with time zone,
+    employment_date       timestamp with time zone default now(),
     remaining_food_perDay int,
     max_food_perDay       int,
     zoo_id                INTEGER REFERENCES zoos (id)
@@ -55,7 +55,7 @@ create table accountants
     age             int,
     name            varchar(255),
     salary          int,
-    employment_date timestamp with time zone,
+    employment_date timestamp with time zone default now(),
     max_food_order  int,
     zoo_id          INTEGER REFERENCES zoos (id)
 );

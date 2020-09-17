@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * JPA repository for visitor entity
  */
-public interface ServiceStaffRepository extends CrudRepository<ServiceStaff, Long> {
+public interface ServiceStaffRepository extends CrudRepository<ServiceStaff, Integer> {
 }

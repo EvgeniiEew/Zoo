@@ -18,7 +18,7 @@ public class ZooService {
         return repository.findAll();
     }
 
-    public Zoo findOne(Long id) {
+    public Zoo findOne(Integer id) {
         return repository.findById(id).get();
     }
 

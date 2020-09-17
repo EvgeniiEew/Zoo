@@ -8,6 +8,6 @@ import java.util.List;
 /**
  * JPA repository for exhibit entity
  */
-public interface AccountantRepository extends CrudRepository<Accountant, Long> {
+public interface AccountantRepository extends CrudRepository<Accountant, Integer> {
 
 }

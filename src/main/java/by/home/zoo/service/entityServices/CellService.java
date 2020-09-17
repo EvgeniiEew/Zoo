@@ -23,7 +23,7 @@ public class CellService{
         return repository.findAll();
     }
 
-    public Cell findOne(Long id) {
+    public Cell findOne(Integer id) {
         return repository.findById(id).get();
     }
 

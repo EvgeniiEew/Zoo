@@ -3,6 +3,8 @@ package by.home.zoo.entity;
 import by.home.zoo.interfaces.Daily;
 //import by.home.zoo.models.humans.Worker;
 import by.home.zoo.service.DailyService;
+import by.home.zoo.service.entityServices.ZooService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -11,16 +13,20 @@ import java.util.Set;
 @Table(name = "zoos")
 public class Zoo implements Daily {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    @OneToOne (optional=false, cascade=CascadeType.ALL)
-    @JoinColumn (name="bank_account_id")
+    @Column(name = "average_purity")
+    private int averagePurity;
+
+    @OneToOne(optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "bank_account_id")
     private BankAccount bankAccount;
 
-    @OneToOne (optional=false, cascade=CascadeType.ALL)
-    @JoinColumn (name="supply_storage_id")
+    @OneToOne(optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "supply_storage_id")
     private SupplyStorage supplyStorageSet;
 
     @OneToMany(mappedBy = "zoo", fetch = FetchType.EAGER)
@@ -29,15 +35,61 @@ public class Zoo implements Daily {
     @OneToMany(mappedBy = "zoo", fetch = FetchType.EAGER)
     private Set<Cell> cellSet;
 
-    //    private final SupplyStorage supplyStorage;//
-//    private final BankAccount bankAccount;//
-//    private int averagePurity = 100;
-//    HashSet<Cell> cells = new HashSet<>();//
-//    HashSet<ServiceStaff> serviceStaffList = new HashSet<>();//
-//    HashSet<AnimalSpecialist> animalSpecialists = new HashSet<>();//
-//      HashSet<Accountant> accountants = new HashSet<>();//
-//
-//
+    public Zoo() {
+    }
+
+    public Zoo(int averagePurity, BankAccount bankAccount, SupplyStorage supplyStorageSet, Set<Accountant> accountants, Set<Cell> cellSet) {
+        this.averagePurity = averagePurity;
+        this.bankAccount = bankAccount;
+        this.supplyStorageSet = supplyStorageSet;
+        this.accountants = accountants;
+        this.cellSet = cellSet;
+    }
+
+    public int getAveragePurity() {
+        return this.averagePurity;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public BankAccount getBankAccount() {
+        return bankAccount;
+    }
+
+    public void setBankAccount(BankAccount bankAccount) {
+        this.bankAccount = bankAccount;
+    }
+
+    public SupplyStorage getSupplyStorageSet() {
+        return supplyStorageSet;
+    }
+
+    public void setSupplyStorageSet(SupplyStorage supplyStorageSet) {
+        this.supplyStorageSet = supplyStorageSet;
+    }
+
+    public Set<Accountant> getAccountants() {
+        return accountants;
+    }
+
+    public void setAccountants(Set<Accountant> accountants) {
+        this.accountants = accountants;
+    }
+
+    public Set<Cell> getCellSet() {
+        return cellSet;
+    }
+
+    public void setCellSet(Set<Cell> cellSet) {
+        this.cellSet = cellSet;
+    }
+
 ////    public Zoo(int cellsNumber, int food, long money) {
 //        for (int i = 1; i <= cellsNumber; i++) {
 //            cells.add(new Cell(1));

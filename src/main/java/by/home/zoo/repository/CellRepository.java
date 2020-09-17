@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * JPA repository for users entity
  */
-public interface CellRepository extends CrudRepository<Cell, Long> {
+public interface CellRepository extends CrudRepository<Cell, Integer> {
 
 }

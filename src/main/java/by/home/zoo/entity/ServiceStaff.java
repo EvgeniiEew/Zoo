@@ -14,7 +14,7 @@ public class ServiceStaff implements Daily { //убиорщики
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "max_daily_purity")
     private int maxDailyPurity; // количества убираемого дерьма в день

@@ -21,7 +21,7 @@ public class AccountantService {
         return repository.findAll();
     }
 
-    public Accountant findOne(Long id) {
+    public Accountant findOne(Integer id) {
         return repository.findById(id).get();
     }
 

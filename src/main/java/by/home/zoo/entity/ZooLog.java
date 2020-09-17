@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class ZooLog {
     @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "cell_count")
     private int cellsCount;

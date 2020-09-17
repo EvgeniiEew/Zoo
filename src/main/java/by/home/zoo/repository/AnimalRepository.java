@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * JPA repository for guide entity
  */
-public interface AnimalRepository extends CrudRepository<Animal, Long> {
+public interface AnimalRepository extends CrudRepository<Animal, Integer> {
 
 
 }
